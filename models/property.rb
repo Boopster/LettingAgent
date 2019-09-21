@@ -16,14 +16,6 @@ class Property
     @price_pcm = options['price_pcm'].to_i()
   end
 
-  # SHOW tenants_controller
-
-  def self.all()
-    sql = "SELECT * FROM properties"
-    results = SqlRunner.run( sql )
-    return results.map { |hash| Property.new( hash ) }
-  end
-
   # CREATE NEW
 
   def save()
@@ -46,6 +38,14 @@ class Property
     values = [@prop_name,@prop_no,@street_name,@town,@postcode,@prop_type,@bedrooms,@price_pcm]
     results = SqlRunner.run(sql, values)
     @id = results.first()['id'].to_i()
+  end
+
+  # SHOW
+
+  def self.all()
+    sql = "SELECT * FROM properties"
+    results = SqlRunner.run( sql )
+    return results.map { |hash| Property.new( hash ) }
   end
 
   # DELETE EXISTING

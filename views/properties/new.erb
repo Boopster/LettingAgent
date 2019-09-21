@@ -1,0 +1,48 @@
+<h1>Add new property</h1>
+
+<form action="/properties" method="post">
+
+  <label for="prop_name">Property Name</label>
+  <input type="text" name="prop_name" id="prop_name">
+
+  <label for="prop_no">Property No</label>
+  <input type="text" name="prop_no" id="prop_no">
+
+  <label for="street_name">Street Name</label>
+  <input type="text" name="street_name" id="street_name">
+
+  <label for="town">Town</label>
+  <input type="text" name="town" id="town">
+
+  <label for="postcode">Postcode</label>
+  <input type="text" name="postcode" id="postcode">
+
+  <label for="prop_type_selection">Property Type
+  <select name ="prop_type" id="prop_type_selection">
+    <option value="Bungalow">Bungalow</option>
+    <option value="Detached">Detached</option>
+    <option value="Semi-detached">Semi-detached</option>
+    <option value="Terraced">Terraced</option>
+    <option value="Flat/Apartment">Flat/Apartment</option>
+    <option value="Maisonette">Maisonette</option>
+    <option value="Townhouse">Townhouse</option>
+  </select>
+  </label>
+
+  <label for="bedrooms_selection">Bedrooms
+  <select name="bedrooms" id="bedrooms_selection">
+    <option value="0">0</option>
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+  </select>
+  </label>
+
+  <label for="price_pcm">Price (£pcm)</label>
+  <input type="text" name="price_pcm" id="price_pcm">
+
+  <input type="submit" value="Add">
+
+</form>

@@ -7,10 +7,10 @@ CREATE TABLE properties
   id SERIAL8 PRIMARY KEY,
   prop_name VARCHAR(255),
   prop_no INT2,
-  street_name VARCHAR(255) not null,
-  town VARCHAR(255) not null,
-  postcode VARCHAR(255) not null,
-  prop_type VARCHAR(255) not null,
+  street_name VARCHAR(255),
+  town VARCHAR(255),
+  postcode VARCHAR(255),
+  prop_type VARCHAR(255),
   bedrooms INT2,
   price_pcm INT2
 );
@@ -18,10 +18,10 @@ CREATE TABLE properties
 CREATE TABLE tenants
 (
   id SERIAL8 PRIMARY KEY,
-  first_name VARCHAR(255) not null,
-  last_name VARCHAR(255) not null,
-  contact_no VARCHAR(11) not null,
-  email VARCHAR(255) not null
+  first_name VARCHAR(255),
+  last_name VARCHAR(255),
+  contact_no VARCHAR(11),
+  email VARCHAR(255)
 );
 
 CREATE TABLE rentals
