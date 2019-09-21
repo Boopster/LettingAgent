@@ -2,7 +2,7 @@ require_relative( '../db/sql_runner' )
 
 class Property
 
-  attr_reader(  )
+  attr_reader(:prop_name, :prop_no, :street_name, :town, :postcode, :prop_type, :bedrooms, :price_pcm)
 
   def initialize( options )
     @id = options['id'].to_i if options['id']
@@ -14,6 +14,14 @@ class Property
     @prop_type = options['prop_type']
     @bedrooms = options['bedrooms'].to_i()
     @price_pcm = options['price_pcm'].to_i()
+  end
+
+  # SHOW tenants_controller
+
+  def self.all()
+    sql = "SELECT * FROM properties"
+    results = SqlRunner.run( sql )
+    return results.map { |hash| Property.new( hash ) }
   end
 
   # CREATE NEW
