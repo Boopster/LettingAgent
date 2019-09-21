@@ -5,10 +5,14 @@ DROP TABLE tenants;
 CREATE TABLE properties
 (
   id SERIAL8 PRIMARY KEY,
-  address VARCHAR(255) not null,
-  property_type VARCHAR(255) not null,
+  prop_name VARCHAR(255),
+  prop_no INT2,
+  street_name VARCHAR(255) not null,
+  town VARCHAR(255) not null,
+  postcode VARCHAR(255) not null,
+  prop_type VARCHAR(255) not null,
   bedrooms INT2,
-  price_pcm INT4
+  price_pcm INT2
 );
 
 CREATE TABLE tenants
@@ -23,6 +27,6 @@ CREATE TABLE tenants
 CREATE TABLE rentals
 (
   id SERIAL8 PRIMARY KEY,
-  property_id INT8 REFERENCES properties(id),
+  prop_id INT8 REFERENCES properties(id),
   tenant_id INT8 REFERENCES tenants(id)
 );
