@@ -8,7 +8,7 @@ class Tenant
     @id = options['id'].to_i if options['id']
     @first_name = options['first_name']
     @last_name = options['last_name']
-    @contact_no = options['contact_no'].to_i
+    @contact_no = options['contact_no']
     @email = options['email']
   end
 

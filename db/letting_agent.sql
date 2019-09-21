@@ -16,7 +16,7 @@ CREATE TABLE tenants
   id SERIAL8 PRIMARY KEY,
   first_name VARCHAR(255) not null,
   last_name VARCHAR(255) not null,
-  contact_no INT11 not null,
+  contact_no VARCHAR(11) not null,
   email VARCHAR(255) not null
 );
 
