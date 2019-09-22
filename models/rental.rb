@@ -23,6 +23,7 @@ class Rental
       $1, $2, $3
     )
     RETURNING id"
+    @rental_status = "leased"
     values = [@prop_id,@tenant_id,@rental_status]
     results = SqlRunner.run(sql,values)
     @id = results.first()['id'].to_i()
