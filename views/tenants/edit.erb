@@ -1,0 +1,19 @@
+<h1>Edit tenant details</h1>
+
+<form action="/tenants/<%= @tenant.id %>" method="post">
+
+  <label for="first_name">First Names(s)</label>
+  <input type="text" name="first_name" id="first_name" value="<%= @tenant.first_name %>">
+
+  <label for="last_name">Last Name</label>
+  <input type="text" name="last_name" id="last_name" value="<%= @tenant.last_name %>">
+
+  <label for="contact_no">Contact No</label>
+  <input type="text" name="contact_no" id="contact_no" value="<%= @tenant.contact_no %>">
+
+  <label for="email">Email</label>
+  <input type="text" name="email" id="email" value="<%= @tenant.email %>">
+
+  <input type="submit" value="Update Tenant">
+
+</form>

@@ -1,0 +1,12 @@
+<p>First Name(s): <%= @tenant.first_name %></p>
+<p>Last Name: <%= @tenant.last_name %></p>
+<p>Contact No: <%= @tenant.contact_no %></p>
+<p>Email: <%= @tenant.email %></p>
+
+<form method="post" action="/tenants/<%= @tenant.id %>/delete">
+  <input type="submit" value="Delete Tenant"/>
+</form>
+
+<form method="get" action="/Tenants/<%= @tenant.id %>/edit">
+  <input type="submit" value="Edit Tenant"/>
+</form>

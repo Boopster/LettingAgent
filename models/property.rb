@@ -5,7 +5,7 @@ class Property
   attr_reader(:prop_name, :prop_no, :street_name, :town, :postcode, :prop_type, :bedrooms, :price_pcm, :id)
 
   def initialize( options )
-    @id = options['id'].to_i if options['id']
+    @id = options['id'].to_i() if options['id']
     @prop_name = options['prop_name']
     @prop_no = options['prop_no'].to_i()
     @street_name = options['street_name']
@@ -89,13 +89,5 @@ class Property
     property = SqlRunner.run( sql, values )
     return Property.new( property.first )
   end
-
-  # DELETE EXISTING LISTING
-  #
-  # def self.delete(id)
-  #   sql = "SELECT * FROM properties WHERE id = $1"
-  #   values = [id]
-  #   SqlRunner.run(sql,values)
-  # end
 
 end
