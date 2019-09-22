@@ -1,0 +1,23 @@
+<h1>Create New Tenancy</h1>
+
+<form action="/rentals" method="post">
+  <label>
+  Select a property:
+    <select name="prop_id">
+      <% @properties.each() { |property| %>
+      <option value="<%= property.id %>"><%= property.street_name %></option>
+      <% } %>
+    </select>
+  </label>
+
+  <label>
+    Select a tenant:
+    <select name="tenant_id">
+      <% @tenants.each() { |tenant| %>
+      <option value="<%= tenant.id %>"><%= tenant.last_name %></option>
+      <% } %>
+    </select>
+  </label>
+
+  <input type='submit' value="Create Tenancy">
+</form>

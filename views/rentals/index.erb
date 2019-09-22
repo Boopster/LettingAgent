@@ -1,0 +1,16 @@
+<h1>Rentals</h1>
+
+<p><a href="/rentals/new">Create Tenancy</a></p>
+
+<ul>
+  <% @rentals.each() { |rental| %>
+  <li>
+  <p><%= rental.property.street_name %><%= rental.tenant.last_name %></p>
+    <p>
+      <form action="/rentals/<%= rental.id %>/delete" method="POST">
+        <input type="submit" value="Terminate Tenancy"/>
+      </form>
+    </p>
+  </li>
+  <% } %>
+</ul>

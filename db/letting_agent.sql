@@ -28,5 +28,6 @@ CREATE TABLE rentals
 (
   id SERIAL8 PRIMARY KEY,
   prop_id INT8 REFERENCES properties(id),
-  tenant_id INT8 REFERENCES tenants(id)
+  tenant_id INT8 REFERENCES tenants(id),
+  rental_status VARCHAR(255)
 );
