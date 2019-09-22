@@ -1,0 +1,16 @@
+<p>Property Name: <%= @property.prop_name %></p>
+<p>Property No: <%= @property.prop_no %></p>
+<p>Street Name: <%= @property.street_name %></p>
+<p>Town: <%= @property.town %></p>
+<p>Postcode: <%= @property.postcode %></p>
+<p>Property Type: <%= @property.prop_type %></p>
+<p>Bedrooms: <%= @property.bedrooms %></p>
+<p>Price(£pcm): <%= @property.price_pcm %></p>
+
+<form method="post" action="/properties/<%= @property.id %>/delete">
+  <input type="submit" value="Delete Listing"/>
+</form>
+
+<form method="get" action="/properties/<%= @property.id %>/edit">
+  <input type="submit" value="Edit Listing"/>
+</form>

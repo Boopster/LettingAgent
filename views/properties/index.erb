@@ -1,6 +1,6 @@
 <h1>Properties</h1>
 
-<table>
+  <table>
   <tr>
     <th>Property Name</th>
     <th></th>
@@ -18,7 +18,7 @@
     <th></th>
     <th>Price(£pcm)</th>
   </tr>
-  <% @properties.each { |property| %>
+    <% @properties.each { |property| %>
   <tr>
     <td><%= property.prop_name %></td>
     <td>|</td>
@@ -35,9 +35,11 @@
     <td><%= property.bedrooms %></td>
     <td>|</td>
     <td><%= property.price_pcm %></td>
+    <td>|</td>
+    <td><a href="/properties/<%= property.id %>">Select listing</a></td>
   </tr>
-  <% } %>
-</table>
+    <% } %>
+  </table>
 
 <p>
   <a href="/properties/new">Create new listing</a>

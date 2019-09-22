@@ -6,15 +6,36 @@ also_reload( '../models/*' )
 
 get '/properties' do
   @properties = Property.all()
-  erb ( :"properties/index" )
+  erb (:"properties/index")
 end
 
 get '/properties/new' do
-  erb ( :"properties/new" )
+  erb (:"properties/new")
+end
+
+get '/properties/:id' do
+  @property = Property.find( params[:id] )
+  erb(:"properties/show")
+end
+
+get '/properties/:id/edit' do
+  @property = Property.find( params[:id] )
+  erb(:"properties/edit")
 end
 
 post '/properties' do
   property = Property.new(params)
   property.save()
+  redirect to("/properties")
+end
+
+post '/properties/:id' do
+  Property.new(params).update
+  redirect to("/properties")
+end
+
+post '/properties/:id/delete' do
+  @property = Property.find(params[:id])
+  @property.delete()
   redirect to("/properties")
 end
