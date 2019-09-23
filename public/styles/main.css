@@ -27,12 +27,12 @@ a, a:link, a:visited {
   padding: 20px;
 }
 
-/* a:hover, a:active, a:focus {
-  background-color: #b1c7db;
-} */
+a:hover, a:active, a:focus {
+  color: #BFD641;
+}
 
 nav {
-  background-color: #588c7e;
+  background-color: #2E4A62;
   text-transform: uppercase;
   padding: 0px;
   margin: 0px;
@@ -76,5 +76,10 @@ main {
 }
 
 a.show {
-  color: #588c7e;
+  color: #BFD641;
+}
+
+div.form {
+  display: inline-block;
+  background-color: White;
 }

@@ -27,9 +27,13 @@ table.bg-white {
 th {
   /* border: 2px solid Black; */
   text-align: center;
-  background-color: Grey;
+  background-color: #E08119;
   color: White;
   font-weight: bold;
+}
+
+th.main {
+  background-color: #577284;
 }
 
 td {
