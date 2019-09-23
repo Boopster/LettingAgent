@@ -6,7 +6,7 @@
   <tr>
     <td><img class="listing" src="../images/awaiting_photos.jpg" alt="awaiting photos"></td>
     <td>
-      <p><%=@property.prop_name%>, <%=@property.prop_no%>, <%=@property.street_name%>,  <%=@property.town%>, <%=@property.postcode%></p>
+      <p><%=@property.prop_name%>, <%=@property.prop_no%> <%=@property.street_name%>,  <%=@property.town%>, <%=@property.postcode%></p>
       <p>Property Type: <%= @property.prop_type %></p>
       <p>Bedrooms: <%= @property.bedrooms %></p>
       <p>Price(£pcm): <%= @property.price_pcm %></p>
@@ -19,9 +19,9 @@
   <input type="submit" value="Delete Listing"/>
 </form>
 
-<!-- <form method="get" action="/properties//edit">
+<form method="get" action="/properties/<%= @property.id %>/edit">
   <input type="submit" value="Edit Listing"/>
-</form> -->
+</form>
 
 <!-- <form method="get" action="/tenants/new">
   <input type="submit" value="Add Tenant"/>
