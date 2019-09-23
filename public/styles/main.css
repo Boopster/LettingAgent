@@ -74,3 +74,7 @@ main {
   max-height:5%;
   /* border: 2px solid Black; */
 }
+
+a.show {
+  color: #ffcc00;
+}

@@ -24,7 +24,15 @@ table.bg-white {
   height: auto;
 } */
 
-td, th {
+th {
+  /* border: 2px solid Black; */
+  text-align: center;
+  background-color: Grey;
+  color: White;
+  font-weight: bold;
+}
+
+td {
   /* border: 2px solid Black; */
   text-align: center;
   background-color: White;
