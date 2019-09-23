@@ -27,7 +27,7 @@ table.bg-white {
 th {
   /* border: 2px solid Black; */
   text-align: center;
-  background-color: #8c8c8c;
+  background-color: Grey;
   color: White;
   font-weight: bold;
 }
@@ -38,4 +38,8 @@ td {
   background-color: White;
   color: Black;
   font-weight: normal;
+}
+
+td.column {
+  text-align: left;
 }

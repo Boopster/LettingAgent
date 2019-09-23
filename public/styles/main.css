@@ -32,7 +32,7 @@ a, a:link, a:visited {
 } */
 
 nav {
-  background-color: #330033;
+  background-color: #588c7e;
   text-transform: uppercase;
   padding: 0px;
   margin: 0px;
@@ -76,5 +76,5 @@ main {
 }
 
 a.show {
-  color: #ffcc00;
+  color: #588c7e;
 }

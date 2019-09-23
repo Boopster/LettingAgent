@@ -1,18 +1,15 @@
 require( 'sinatra' )
 require( 'sinatra/contrib/all' )
 require_relative( '../models/tenant.rb' )
-require_relative( '../models/property.rb' )
 also_reload( '../models/*' )
 require( 'pry-byebug' )
 
-
-# get '/tenants' do
-#   @tenants = Tenant.all()
-#   erb (:"tenants/index")
-# end
-
 get '/tenants' do
   @tenants = Tenant.all()
+  erb (:"tenants/index")
+end
+
+get '/tenants/new' do
   erb (:"tenants/new")
 end
 
@@ -29,7 +26,7 @@ end
 post '/tenants' do
   tenant = Tenant.new(params)
   tenant.save()
-  redirect to("/tenants/new")
+  redirect to("/tenants")
 end
 
 post '/tenants/:id' do

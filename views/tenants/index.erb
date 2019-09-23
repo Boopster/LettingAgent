@@ -3,28 +3,22 @@
   <table>
   <tr>
     <th>First Name(s)</th>
-    <th></th>
     <th>Last Name</th>
-    <th></th>
     <th>Contact No</th>
-    <th></th>
     <th>Email</th>
+    <th></th>
   </tr>
     <% @tenants.each { |tenant| %>
   <tr>
     <td><%= tenant.first_name %></td>
-    <td>|</td>
     <td><%= tenant.last_name %></td>
-    <td>|</td>
     <td><%= tenant.contact_no %></td>
-    <td>|</td>
     <td><%= tenant.email %></td>
-    <td>|</td>
-    <td><a href="/tenants/<%= tenant.id %>">Select tenant</a></td>
+    <td><a class="show" href="/tenants/<%= tenant.id %>">View Details</a></td>
   </tr>
     <% } %>
   </table>
 
 <p>
-  <a href="/tenants/new">Create new tenant</a>
+  <a href="/tenants/new">Add New Tenant</a>
 </p>
