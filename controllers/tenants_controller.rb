@@ -5,12 +5,13 @@ also_reload( '../models/*' )
 require( 'pry-byebug' )
 
 
-get '/tenants' do
-  @tenants = Tenant.all()
-  erb (:"tenants/index")
-end
+# get '/tenants' do
+#   @tenants = Tenant.all()
+#   erb (:"tenants/index")
+# end
 
 get '/tenants/new' do
+  @tenants = Tenant.all()
   erb (:"tenants/new")
 end
 
@@ -27,11 +28,11 @@ end
 post '/tenants' do
   tenant = Tenant.new(params)
   tenant.save()
-  redirect to("/tenants")
+  redirect to("/tenants/new")
 end
 
 post '/tenants/:id' do
-  Tenant.new(params).update
+  Tenant.new(params).update()
   redirect to("/tenants")
 end
 
@@ -40,6 +41,6 @@ post '/tenants/:id/delete' do
   @tenant.delete()
   redirect to("/tenants")
 end
-# 
+#
 # binding.pry
 # nil

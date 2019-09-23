@@ -3,40 +3,26 @@
   <table>
   <tr>
     <th>Property Name</th>
-    <th></th>
     <th>Property No</th>
-    <th></th>
     <th>Street Name</th>
-    <th></th>
     <th>Town</th>
-    <th></th>
     <th>Postcode</th>
-    <th></th>
     <th>Property Type</th>
-    <th></th>
     <th>Bedrooms</th>
-    <th></th>
     <th>Price(£pcm)</th>
+    <th></th>
   </tr>
     <% @properties.each { |property| %>
   <tr>
     <td><%= property.prop_name %></td>
-    <td>|</td>
     <td><%= property.prop_no %></td>
-    <td>|</td>
     <td><%= property.street_name %></td>
-    <td>|</td>
     <td><%= property.town %></td>
-    <td>|</td>
     <td><%= property.postcode %></td>
-    <td>|</td>
     <td><%= property.prop_type %></td>
-    <td>|</td>
     <td><%= property.bedrooms %></td>
-    <td>|</td>
     <td><%= property.price_pcm %></td>
-    <td>|</td>
-    <td><a href="/properties/<%= property.id %>">Select listing</a></td>
+    <td><a href="/properties/<%= property.id %>">View Details</a></td>
   </tr>
     <% } %>
   </table>

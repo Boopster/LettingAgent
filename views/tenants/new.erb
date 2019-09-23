@@ -15,5 +15,17 @@
   <input type="text" name="email" id="email">
 
   <input type="submit" value="Add Tenant">
+  <!-- add tenant_id and prop_id to rentals table tenants controller? -->
 
+</form>
+
+<% @tenants.each() { |tenant| %>
+  <p>First Names(s): <%= tenant.first_name %></p>
+  <p>Last Name: <%= tenant.last_name %></p>
+  <p>Contact No: <%= tenant.contact_no %></p>
+  <p>Email: <%= tenant.email %></p>
+<% } %>
+
+<form action="/rentals" method="POST">
+  <input type="submit" value="Create Lease"
 </form>

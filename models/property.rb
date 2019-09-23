@@ -61,7 +61,7 @@ class Property
     )
     WHERE id = $9"
     values = [@prop_name,@prop_no,@street_name,@town,@postcode,@prop_type,@bedrooms,@price_pcm, @id]
-    SqlRunner.run( sql, values )
+    SqlRunner.run(sql,values)
   end
 
   # DELETE LISTING
@@ -70,7 +70,7 @@ class Property
     sql = "DELETE FROM properties
     WHERE id = $1"
     values = [@id]
-    SqlRunner.run( sql, values )
+    SqlRunner.run(sql,values)
   end
 
   # SHOW ALL LISTINGS
@@ -83,11 +83,11 @@ class Property
 
   # SHOW
 
-  def self.find( id )
+  def self.find(id)
     sql = "SELECT * FROM properties WHERE id = $1"
     values = [id]
     property = SqlRunner.run( sql, values )
-    return Property.new( property.first )
+    return Property.new(property.first())
   end
 
 end
