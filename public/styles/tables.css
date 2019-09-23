@@ -10,9 +10,24 @@ td {
 th {
   padding: 10px 20px 10px 20px; */
   /* border: 1px solid White; */
- /* }
+ }
 
-table {
-  border: 1px solid White;
-  border-collapse: collapse;
+table.bg-white {
+  /* border: 1px solid White;
+  border-collapse: collapse; */
+    /* background: White; */
+    /* color: white; */
+  }
+
+/* td {
+  max-width: 20%;
+  height: auto;
 } */
+
+td, th {
+  /* border: 2px solid Black; */
+  text-align: center;
+  background-color: White;
+  color: Black;
+  font-weight: normal;
+}

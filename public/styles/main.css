@@ -68,3 +68,9 @@ main {
   border-left: 1px solid darkred;
   padding-left: 25px;
 } */
+
+ img.listing {
+  max-width:auto;
+  max-height:5%;
+  /* border: 2px solid Black; */
+}
