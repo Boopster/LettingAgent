@@ -27,7 +27,7 @@ table.bg-white {
 th {
   /* border: 2px solid Black; */
   text-align: center;
-  background-color: Grey;
+  background-color: #8c8c8c;
   color: White;
   font-weight: bold;
 }

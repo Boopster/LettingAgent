@@ -1,8 +1,8 @@
-require_relative( '../db/sql_runner' )
+require_relative('../db/sql_runner')
 
 class Property
 
-  attr_reader(:prop_name, :prop_no, :street_name, :town, :postcode, :prop_type, :bedrooms, :price_pcm, :id)
+  attr_reader(:prop_name, :prop_no, :street_name, :town, :postcode, :prop_type, :bedrooms, :price_pcm, :prop_status, :id)
 
   def initialize( options )
     @id = options['id'].to_i() if options['id']
@@ -14,6 +14,7 @@ class Property
     @prop_type = options['prop_type']
     @bedrooms = options['bedrooms'].to_i()
     @price_pcm = options['price_pcm'].to_i()
+    @prop_status = options['prop_status']
   end
 
   # CREATE NEW LISTING
@@ -28,14 +29,16 @@ class Property
       postcode,
       prop_type,
       bedrooms,
-      price_pcm
+      price_pcm,
+      prop_status
     )
     VALUES
     (
-      $1, $2, $3, $4, $5, $6, $7, $8
+      $1, $2, $3, $4, $5, $6, $7, $8, $9
     )
     RETURNING id"
-    values = [@prop_name,@prop_no,@street_name,@town,@postcode,@prop_type,@bedrooms,@price_pcm]
+    @prop_status = "listed"
+    values = [@prop_name,@prop_no,@street_name,@town,@postcode,@prop_type,@bedrooms,@price_pcm,@prop_status]
     results = SqlRunner.run(sql, values)
     @id = results.first()['id'].to_i()
   end

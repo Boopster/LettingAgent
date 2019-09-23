@@ -1,25 +1,16 @@
 <table class="bg-white">
   <tr>
     <th></th>
-    <th>Property Name</th>
-    <th>Property No</th>
-    <th>Street Name</th>
-    <th>Town</th>
-    <th>Postcode</th>
-    <th>Property Type</th>
-    <th>Bedrooms</th>
-    <th>Price(£pcm)</th>
+    <th>Property Details</th>
   </tr>
   <tr>
     <td><img class="listing" src="../images/awaiting_photos.jpg" alt="awaiting photos"></td>
-    <td><%= @property.prop_name %></td>
-    <td><%= @property.prop_no %></td>
-    <td><%= @property.street_name %></td>
-    <td><%= @property.town %></td>
-    <td><%= @property.postcode %></td>
-    <td><%= @property.prop_type %></td>
-    <td><%= @property.bedrooms %></td>
-    <td><%= @property.price_pcm %></td>
+    <td>
+      <p><%=@property.prop_name%>, <%=@property.prop_no%>, <%=@property.street_name%>,  <%=@property.town%>, <%=@property.postcode%></p>
+      <p>Property Type: <%= @property.prop_type %></p>
+      <p>Bedrooms: <%= @property.bedrooms %></p>
+      <p>Price(£pcm): <%= @property.price_pcm %></p>
+    </td>
   </tr>
 <table>
 
@@ -32,6 +23,6 @@
   <input type="submit" value="Edit Listing"/>
 </form> -->
 
-<form method="get" action="/tenants/new">
+<!-- <form method="get" action="/tenants/new">
   <input type="submit" value="Add Tenant"/>
-</form>
+</form> -->

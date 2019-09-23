@@ -18,9 +18,9 @@ get '/rentals/new' do
 end
 
 post '/rentals' do
-  # rental = Rental.new(params) #takes info from form - I need to take it from - go to save tenant and property id at that stage
-  # rental.save()
-  # redirect to("/rentals")
+  rental = Rental.new(params)
+  rental.save()
+  redirect to("/rentals")
 end
 
 # post '/rentals/:id' do

@@ -12,7 +12,8 @@ CREATE TABLE properties
   postcode VARCHAR(255),
   prop_type VARCHAR(255),
   bedrooms INT2,
-  price_pcm INT2
+  price_pcm INT2,
+  prop_status VARCHAR(255)
 );
 
 CREATE TABLE tenants
@@ -22,7 +23,7 @@ CREATE TABLE tenants
   last_name VARCHAR(255),
   contact_no VARCHAR(255),
   email VARCHAR(255),
-  status VARCHAR(255)
+  tenant_status VARCHAR(255)
 );
 
 CREATE TABLE rentals

@@ -1,6 +1,8 @@
 <h1>Create New Tenancy</h1>
 
 <form action="/rentals" method="post">
+
+<!-- property should only appear if prop status is listed -->
   <label>
   Select a property:
     <select name="prop_id">
@@ -10,6 +12,7 @@
     </select>
   </label>
 
+<!-- tenant should only appear if tenant status is prospective -->
   <label>
     Select a tenant:
     <select name="tenant_id">
