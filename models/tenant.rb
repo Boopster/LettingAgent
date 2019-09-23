@@ -2,7 +2,7 @@ require_relative('../db/sql_runner')
 
 class Tenant
 
-  attr_reader(:first_name, :last_name, :contact_no, :email, :id)
+  attr_reader(:first_name, :last_name, :contact_no, :email, :status, :id)
 
   def initialize(options)
     @id = options['id'].to_i() if options['id']
@@ -10,6 +10,7 @@ class Tenant
     @last_name = options['last_name']
     @contact_no = options['contact_no']
     @email = options['email']
+    @status = options['status']
   end
 
   def save()
@@ -18,14 +19,16 @@ class Tenant
       first_name,
       last_name,
       contact_no,
-      email
+      email,
+      status
     )
     VALUES
     (
-      $1, $2, $3, $4
+      $1, $2, $3, $4, $5
     )
     RETURNING id"
-    values = [@first_name,@last_name,@contact_no,@email]
+    @status = "prospective"
+    values = [@first_name,@last_name,@contact_no,@email,@status]
     results = SqlRunner.run(sql,values)
     @id = results.first()['id'].to_i()
   end

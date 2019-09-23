@@ -19,6 +19,13 @@
 
 </form>
 
+<% @tenants.each { |tenant| %>
+<form action="/rentals">
+  <input type="text" name="country" value=<%= tenant.id %> readonly><br>
+  <input type="submit" value="Submit">
+</form>
+<% } %>
+
 <% @tenants.each() { |tenant| %>
   <p>First Names(s): <%= tenant.first_name %></p>
   <p>Last Name: <%= tenant.last_name %></p>

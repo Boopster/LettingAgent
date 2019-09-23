@@ -21,7 +21,8 @@ CREATE TABLE tenants
   first_name VARCHAR(255),
   last_name VARCHAR(255),
   contact_no VARCHAR(255),
-  email VARCHAR(255)
+  email VARCHAR(255),
+  status VARCHAR(255)
 );
 
 CREATE TABLE rentals
