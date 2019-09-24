@@ -22,14 +22,12 @@ CREATE TABLE tenants
   first_name VARCHAR(255),
   last_name VARCHAR(255),
   contact_no VARCHAR(255),
-  email VARCHAR(255),
-  tenant_status VARCHAR(255)
+  email VARCHAR(255)
 );
 
 CREATE TABLE rentals
 (
   id SERIAL8 PRIMARY KEY,
   prop_id INT8 REFERENCES properties(id),
-  tenant_id INT8 REFERENCES tenants(id),
-  rental_status VARCHAR(255)
+  tenant_id INT8 REFERENCES tenants(id)
 );

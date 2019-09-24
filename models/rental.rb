@@ -2,7 +2,7 @@ require_relative( '../db/sql_runner' )
 
 class Rental
 
-  attr_reader(:prop_id, :tenant_id, :id)
+  attr_reader(:prop_id, :tenant_id,:id)
 
   def initialize( options )
     @id = options['id'].to_i() if options['id']
@@ -24,6 +24,13 @@ class Rental
     values = [@prop_id,@tenant_id]
     results = SqlRunner.run(sql,values)
     @id = results.first()['id'].to_i()
+  end
+
+  def delete()
+    sql = "DELETE FROM rentals
+    WHERE id = $1"
+    values = [@id]
+    SqlRunner.run(sql,values)
   end
 
   def property()
@@ -48,22 +55,6 @@ class Rental
   #   rental = SqlRunner.run(sql,values)
   #   return Rental.new(rental.first())
   # end
-  #
-  # def update()
-  #   sql = "UPDATE rentals
-  #   SET
-  #   (
-  #     rental_status
-  #   )
-  #   =
-  #   (
-  #     $1
-  #   )
-  #   WHERE id = $2"
-  #   @rental_status = "terminated"
-  #   values = [@rental_status,@id]
-  #   SqlRunner.run(sql,values)
-  # end
 
   def self.all()
     sql = "SELECT * FROM rentals"
@@ -71,18 +62,18 @@ class Rental
     return results.map() { |rental| Rental.new(rental) }
   end
 
-  # def self.find(id)
-  #   sql = "SELECT * FROM rentals WHERE id = $1"
-  #   values = [id]
-  #   rental = SqlRunner.run(sql,values)
-  #   return Rental.new(rental.first())
-  # end
+  def self.find(id)
+    sql = "SELECT * FROM rentals WHERE id = $1"
+    values = [id]
+    rental = SqlRunner.run(sql,values)
+    return Rental.new(rental.first())
+  end
 
-  # def self.terminate(id)
-  #   sql = "DELETE FROM rentals
-  #   WHERE id = $1"
-  #   values = [id]
-  #   SqlRunner.run(sql,values)
-  # end
+  def self.delete(id)
+    sql = "DELETE FROM rentals
+    WHERE id = $1"
+    values = [id]
+    SqlRunner.run(sql,values)
+  end
 
 end

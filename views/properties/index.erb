@@ -14,7 +14,7 @@
     <th>Price(£pcm)</th>
     <th></th>
   </tr>
-    <% @properties.each { |property| %>
+    <% @properties.each { |property| if property.prop_status == "listed"%>
   <tr>
     <td><%= property.prop_name %></td>
     <td><%= property.prop_no %></td>
@@ -26,7 +26,8 @@
     <td><%= property.price_pcm %></td>
     <td><a class="show" href="/properties/<%= property.id %>">View Details</a></td>
   </tr>
-    <% } %>
+
+    <% end } %>
   </table>
 </div>
 

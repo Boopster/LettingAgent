@@ -1,16 +1,31 @@
 <h1>Leases</h1>
 
-<ul>
-  <% @rentals.each() { |rental| %>
-  <li>
-  <p><%=rental.property.street_name%> <%=rental.tenant.last_name%> <%= rental.rental_status%></p>
-    <p>
-      <form action="/rentals/<%=rental.id%> method="POST">
-        <input type="submit" value="Terminate Tenancy"/>
-      </form>
-    </p>
-  </li>
-   <% } %>
-</ul>
+<div class="form">
+  <table class="bg-white">
+    <tr><th class="main" colspan="7">Lease Details</th></tr>
+      <tr>
+        <th>Property Name</th>
+        <th>Property No</th>
+        <th>Street Name</th>
+        <th>Town</th>
+        <th>Postcode</th>
+        <th>Tenant Count</th>
+        <th></th>
+      </tr>
+
+    <tr>
+<% @rentals.each() { |rental| %>
+      <td><%=rental.property.prop_name%></td>
+      <td><%=rental.property.prop_no%></td>
+      <td><%=rental.property.street_name%></td>
+      <td><%=rental.property.town%></td>
+      <td><%=rental.property.postcode%></td>
+      <td>T.B.A.</td>
+      <td><a class="show" href="/rentals/<%= rental.id %>">View Details</a></td>
+        <% } %>
+      </tr>
+
+  </table>
+</div>
 
 <p><a href="/rentals/new">Create Tenancy</a></p>
