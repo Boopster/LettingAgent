@@ -14,28 +14,27 @@ get '/properties/new' do
 end
 
 get '/properties/:id' do
-  @property = Property.find( params[:id] )
+  @property = Property.find(params[:id])
   erb(:"properties/show")
 end
 
 get '/properties/:id/edit' do
-  @property = Property.find( params[:id] )
+  @property = Property.find(params[:id])
   erb(:"properties/edit")
 end
 
 post '/properties' do
-  property = Property.new(params)
-  property.save()
+  property = Property.new(params).save()
   redirect to("/properties")
 end
 
 post '/properties/:id' do
-  Property.new(params).update
+  Property.new(params).update()
   redirect to("/properties")
 end
 
 post '/properties/:id/delete' do
   @property = Property.find(params[:id])
-  @property.delete()
+  @property.update_status_archived()
   redirect to("/properties")
 end

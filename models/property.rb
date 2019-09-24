@@ -79,6 +79,15 @@ class Property
     SqlRunner.run(sql,values)
   end
 
+  def update_status_archived()
+    sql = "UPDATE properties
+    SET prop_status = $1
+    WHERE id = $2"
+    @prop_status = "archived"
+    values = [@prop_status, @id]
+    SqlRunner.run(sql,values)
+  end
+
   # DELETE LISTING
 
   def delete()
@@ -92,8 +101,8 @@ class Property
 
   def self.all()
     sql = "SELECT * FROM properties"
-    results = SqlRunner.run( sql )
-    return results.map { |hash| Property.new( hash ) }
+    results = SqlRunner.run(sql)
+    return results.map { |hash| Property.new(hash) }
   end
 
   # SHOW
@@ -101,7 +110,7 @@ class Property
   def self.find(id)
     sql = "SELECT * FROM properties WHERE id = $1"
     values = [id]
-    property = SqlRunner.run( sql, values )
+    property = SqlRunner.run(sql,values)
     return Property.new(property.first())
   end
 

@@ -1,31 +1,4 @@
 <h1>Letting Agent</h1>
 
-<table>
-  <tr><th class="main" colspan="3">All Properties</th></tr>
-  <tr>
-    <th colspan="2" rowspan="2">Details</th>
-    <th>Status</th>
-  </tr>
-  <tr>
-    <td>
-      <label for="prop_status_selection">
-        <select name ="prop_status" id="prop_status_selection">
-          <option value="All">All</option>
-          <option value="Listed">Listed</option>
-          <option value="Leased">Leased</option>
-        </select>
-      </label>
-      </td></tr>
-  <% @properties.each() { |property| %>
-  <tr>
-    <td><img class="listing" src="../images/awaiting_photos.jpg" alt="awaiting photos"></td>
-    <td>
-      <p><%=property.prop_name%>, <%=property.prop_no%> <%=property.street_name%>,  <%=property.town%>, <%=property.postcode%></p>
-      <p>Property Type: <%=property.prop_type %></p>
-      <p>Bedrooms: <%=property.bedrooms %></p>
-      <p>Price(£pcm): <%=property.price_pcm %></p>
-    </td>
-    <td class="green"><%=property.prop_status%></td>
-  </tr>
-  <% } %>
-</table>
+<!-- <table>
+</table> -->
