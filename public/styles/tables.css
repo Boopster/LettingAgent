@@ -47,3 +47,9 @@ td {
 td.column {
   text-align: left;
 }
+
+td.green {
+  color: #BFD641;
+  text-transform: uppercase;
+  font-weight: bold;
+}

@@ -3,10 +3,19 @@
 <table>
   <tr><th class="main" colspan="3">All Properties</th></tr>
   <tr>
-    <th></th>
-    <th>Property Address</th>
-    <th>Property Status</th>
+    <th colspan="2" rowspan="2">Details</th>
+    <th>Status</th>
   </tr>
+  <tr>
+    <td>
+      <label for="prop_status_selection">
+        <select name ="prop_status" id="prop_status_selection">
+          <option value="All">All</option>
+          <option value="Listed">Listed</option>
+          <option value="Leased">Leased</option>
+        </select>
+      </label>
+      </td></tr>
   <% @properties.each() { |property| %>
   <tr>
     <td><img class="listing" src="../images/awaiting_photos.jpg" alt="awaiting photos"></td>
@@ -16,7 +25,7 @@
       <p>Bedrooms: <%=property.bedrooms %></p>
       <p>Price(£pcm): <%=property.price_pcm %></p>
     </td>
-    <td><%=property.prop_status%></td>
+    <td class="green"><%=property.prop_status%></td>
   </tr>
   <% } %>
 </table>
