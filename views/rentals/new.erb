@@ -5,9 +5,9 @@
   <label>
   Select a property:
     <select name="prop_id">
-      <% @properties.each() { |property| %>
+      <% @properties.each() { |property| if property.prop_status == "listed"%>
       <option value="<%= property.id %>"><%= property.street_name %></option>
-      <% } %>
+      <% end } %>
     </select>
   </label>
 

@@ -12,9 +12,9 @@
         <th>Tenant Count</th>
         <th></th>
       </tr>
-
-    <tr>
 <% @rentals.each() { |rental| if rental.property.prop_status == "leased"%>
+    <tr>
+
       <td><%=rental.property.prop_name%></td>
       <td><%=rental.property.prop_no%></td>
       <td><%=rental.property.street_name%></td>
@@ -22,9 +22,9 @@
       <td><%=rental.property.postcode%></td>
       <td>T.B.A.</td>
       <td><a class="show" href="/rentals/<%= rental.id %>">View Details</a></td>
-        <% end } %>
-      </tr>
 
+      </tr>
+  <% end } %>
   </table>
 </div>
 
