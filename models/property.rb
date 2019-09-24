@@ -45,25 +45,44 @@ class Property
 
   # UPDATE LISTING
 
-  def update()
+  # def update()
+  #   sql = "UPDATE properties
+  #   SET
+  #   (
+  #     prop_name,
+  #     prop_no,
+  #     street_name,
+  #     town,
+  #     postcode,
+  #     prop_type,
+  #     bedrooms,
+  #     price_pcm,
+  #     prop_status
+  #   )
+  #   =
+  #   (
+  #     $1, $2, $3, $4, $5, $6, $7, $8, $9
+  #   )
+  #   WHERE id = $10"
+  #   values = [@prop_name,@prop_no,@street_name,@town,@postcode,@prop_type,@bedrooms,@price_pcm, @prop_status, @id]
+  #   SqlRunner.run(sql,values)
+  # end
+
+  def update_status_leased()
     sql = "UPDATE properties
-    SET
-    (
-      prop_name,
-      prop_no,
-      street_name,
-      town,
-      postcode,
-      prop_type,
-      bedrooms,
-      price_pcm
-    )
-    =
-    (
-      $1, $2, $3, $4, $5, $6, $7, $8
-    )
-    WHERE id = $9"
-    values = [@prop_name,@prop_no,@street_name,@town,@postcode,@prop_type,@bedrooms,@price_pcm, @id]
+    SET prop_status = $1
+    WHERE id = $2"
+    @prop_status = "leased"
+    values = [@prop_status, @id]
+    SqlRunner.run(sql,values)
+  end
+
+  def update_status_listed()
+    sql = "UPDATE properties
+    SET prop_status = $1
+    WHERE id = $2"
+    @prop_status = "listed"
+    values = [@prop_status, @id]
     SqlRunner.run(sql,values)
   end
 

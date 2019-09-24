@@ -49,12 +49,12 @@ class Rental
     return Tenant.new(results.first())
   end
 
-  # def find(id)
-  #   sql = "SELECT * FROM rentals WHERE id = $1"
-  #   values = [id]
-  #   rental = SqlRunner.run(sql,values)
-  #   return Rental.new(rental.first())
-  # end
+  def find(id)
+    sql = "SELECT * FROM rentals WHERE id = $1"
+    values = [id]
+    rental = SqlRunner.run(sql,values)
+    return Rental.new(rental.first())
+  end
 
   def self.all()
     sql = "SELECT * FROM rentals"

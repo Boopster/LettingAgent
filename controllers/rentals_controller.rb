@@ -25,6 +25,7 @@ end
 post '/rentals' do
   rental = Rental.new(params)
   rental.save()
+  rental.property.update_status_leased()
   redirect to("/rentals")
 end
 
@@ -37,5 +38,6 @@ end
 post '/rentals/:id/delete' do
   @rental = Rental.find(params[:id])
   @rental.delete()
+  @rental.property.update_status_listed()
   redirect to("/rentals")
 end
