@@ -5,7 +5,7 @@
   <label>
   Select a property:
     <select name="prop_id">
-      <% @properties.each() { |property| if property.prop_status == "listed"%>
+      <% @properties.each() { |property| if property.prop_status == "listed" || "archived"%>
       <option value="<%= property.id %>"><%= property.street_name %></option>
       <% end } %>
     </select>
@@ -14,9 +14,9 @@
   <label>
     Select a tenant:
     <select name="tenant_id">
-      <% @tenants.each() { |tenant| %>
+      <% @tenants.each() { |tenant| if tenant.tenant_status == "inactive" || "archived"%>
       <option value="<%= tenant.id %>"><%= tenant.last_name %></option>
-      <% } %>
+      <% end } %>
     </select>
   </label>
 

@@ -2,7 +2,7 @@ require_relative('../db/sql_runner')
 
 class Tenant
 
-  attr_reader(:first_name, :last_name, :contact_no, :email, :id)
+  attr_reader(:first_name, :last_name, :contact_no, :email, :tenant_status, :id)
 
   def initialize(options)
     @id = options['id'].to_i() if options['id']
@@ -19,14 +19,16 @@ class Tenant
       first_name,
       last_name,
       contact_no,
-      email
+      email,
+      tenant_status
     )
     VALUES
     (
-      $1, $2, $3, $4
+      $1, $2, $3, $4, $5
     )
     RETURNING id"
-    values = [@first_name,@last_name,@contact_no,@email]
+    @tenant_status = "inactive"
+    values = [@first_name,@last_name,@contact_no,@email,@tenant_status]
     results = SqlRunner.run(sql,values)
     @id = results.first()['id'].to_i()
   end
@@ -48,6 +50,24 @@ class Tenant
     )
     WHERE id = $5"
     values = [@first_name,@last_name,@contact_no,@email,@id]
+    SqlRunner.run(sql,values)
+  end
+
+  def update_status_active()
+    sql = "UPDATE tenants
+    SET tenant_status = $1
+    WHERE id = $2"
+    values = [@tenant_status,@id]
+    @tenant_status = "active"
+    SqlRunner.run(sql,values)
+  end
+
+  def update_status_inactive()
+    sql = "UPDATE tenants
+    SET tenant_status = $1
+    WHERE id = $2"
+    values = [@tenant_status,@id]
+    @tenant_status = "inactive"
     SqlRunner.run(sql,values)
   end
 

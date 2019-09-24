@@ -48,20 +48,14 @@ class Property
   def update()
     sql = "UPDATE properties
     SET
-    (
-      prop_name,
-      prop_no,
-      street_name,
-      town,
-      postcode,
-      prop_type,
-      bedrooms,
-      price_pcm
-    )
-    =
-    (
-      $1, $2, $3, $4, $5, $6, $7, $8
-    )
+      prop_name = $1,
+      prop_no = $2,
+      street_name = $3,
+      town = $4,
+      postcode = $5,
+      prop_type = $6,
+      bedrooms = $7,
+      price_pcm = $8
     WHERE id = $9"
     values = [@prop_name,@prop_no,@street_name,@town,@postcode,@prop_type,@bedrooms,@price_pcm, @id]
     SqlRunner.run(sql,values)
