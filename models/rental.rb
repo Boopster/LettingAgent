@@ -2,11 +2,10 @@ require_relative( '../db/sql_runner' )
 
 class Rental
 
-  attr_reader(:lease_start_date, :prop_id, :tenant_id,:id)
+  attr_reader(:prop_id, :tenant_id,:id)
 
   def initialize( options )
     @id = options['id'].to_i() if options['id']
-    @lease_start_date = options['date_listed']
     @prop_id = options['prop_id'].to_i()
     @tenant_id = options['tenant_id'].to_i()
   end
@@ -14,17 +13,15 @@ class Rental
   def save()
     sql = "INSERT INTO rentals
     (
-      lease_start_date,
       prop_id,
       tenant_id
     )
     VALUES
     (
-      $1, $2, $3
+      $1, $2
     )
     RETURNING id"
-    @lease_start_date = Date.today.to_s()
-    values = [@lease_start_date,@prop_id,@tenant_id]
+    values = [@prop_id,@tenant_id]
     results = SqlRunner.run(sql,values)
     @id = results.first()['id'].to_i()
   end

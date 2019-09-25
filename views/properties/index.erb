@@ -1,34 +1,42 @@
+<h1>Lease Manager</h1>
 <h1>Properties</h1>
 
 <div class="form">
-  <table>
-    <tr><th class ="main" colspan="9">Property Listings</th></tr>
-  <tr>
-    <th>Property Name</th>
-    <th>Property No</th>
-    <th>Street Name</th>
-    <th>Town</th>
-    <th>Postcode</th>
-    <th>Property Type</th>
-    <th>Bedrooms</th>
-    <th>Price(£pcm)</th>
-    <th></th>
-  </tr>
-    <% @properties.each { |property| if property.prop_status == "listed"%>
-  <tr>
-    <td class="column"><%= property.prop_name %></td>
-    <td><%= property.prop_no %></td>
-    <td class="column"><%= property.street_name %></td>
-    <td class="column"><%= property.town %></td>
-    <td class="column"><%= property.postcode %></td>
-    <td class="column"><%= property.prop_type %></td>
-    <td><%= property.bedrooms %></td>
-    <td><%= property.price_pcm %></td>
-    <td><a class="show" href="/properties/<%= property.id %>">View Details</a></td>
-  </tr>
-
-    <% end } %>
-  </table>
+  <div id="container">
+    <table class="container">
+      <thead>
+        <tr>
+          <th class ="main" colspan="9">Property Listings</th>
+        </tr>
+        <tr>
+          <th>Property Name</th>
+          <th>Property No</th>
+          <th>Street Name</th>
+          <th>Town</th>
+          <th>Postcode</th>
+          <th>Property Type</th>
+          <th>Bedrooms</th>
+          <th>Price(£pcm)</th>
+          <th></th>
+        </tr>
+      </thead>
+          <% @properties.each { |property| if property.prop_status == "listed"%>
+          <tbody>
+        <tr>
+          <td><%= property.prop_name %></td>
+          <td><%= property.prop_no %></td>
+          <td><%= property.street_name %></td>
+          <td><%= property.town %></td>
+          <td><%= property.postcode %></td>
+          <td><%= property.prop_type %></td>
+          <td><%= property.bedrooms %></td>
+          <td><%= property.price_pcm %></td>
+          <td><a class="show" href="/properties/<%= property.id %>">View Details</a></td>
+        </tr>
+        </tbody>
+        <% end } %>
+    </table>
+  </div>
 </div>
 
 <p>

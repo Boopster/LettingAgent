@@ -1,29 +1,34 @@
-<table class="bg-white">
-  <tr>
-    <th colspan="3">Contact Details</th>
-  </tr>
-  <tr>
-      <td class="column">First Name(s):</td>
-      <td class="column"><%= @tenant.first_name %></td>
-  </tr>
-  <tr>
-      <td class="column">Last Name:</td>
-      <td class="column"><%= @tenant.last_name %></td>
-  </tr>
-  <tr>
-      <td class="column">Contact No:</td>
-      <td class="column"><%= @tenant.contact_no %></td>
-  </tr>
-  <tr>
-      <td class="column">Email</td>
-      <td class="column"><%= @tenant.email %></td>
-  </tr>
-</table>
+<h1>Lease Manager</h1>
+<h1>Show tenant details</h1>
 
-<form method="post" action="/tenants/<%= @tenant.id %>/delete">
-  <input type="submit" value="Delete Tenant"/>
-</form>
+<div class="form">
+  <table>
+    <tr>
+      <th colspan="3">Contact Details</th>
+    </tr>
+    <tr>
+        <td class="column">First Name(s):</td>
+        <td class="column"><%= @tenant.first_name %></td>
+    </tr>
+    <tr>
+        <td class="column">Last Name:</td>
+        <td class="column"><%= @tenant.last_name %></td>
+    </tr>
+    <tr>
+        <td class="column">Contact No:</td>
+        <td class="column"><%= @tenant.contact_no %></td>
+    </tr>
+    <tr>
+        <td class="column">Email</td>
+        <td class="column"><%= @tenant.email %></td>
+    </tr>
+  </table>
 
-<form method="get" action="/tenants/<%= @tenant.id %>/edit">
-  <input type="submit" value="Edit Tenant"/>
-</form>
+  <form method="post" action="/tenants/<%= @tenant.id %>/delete">
+    <input type="submit" value="Delete Tenant"/>
+  </form>
+
+  <form method="get" action="/tenants/<%= @tenant.id %>/edit">
+    <input type="submit" value="Edit Tenant"/>
+  </form>
+</div>

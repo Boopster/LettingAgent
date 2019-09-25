@@ -1,19 +1,16 @@
 <h1>Lease Manager</h1>
-<h1>Create new lease</h1>
+<h1>Add tenant to lease</h1>
 
 <form action="/rentals" method="post">
 <div class="form">
   <table>
     <tr>
-      <th class="main">Select a property:</th>
+      <th class="main">Property:</th>
     </tr>
     <tr>
       <td>
-        <select name="prop_id">
-          <% @properties.each() { |property| if property.prop_status == "listed"%>
-          <option value="<%=property.id%>"><%=property.prop_name%>, <%=property.prop_no%>, <%= property.street_name %>, <%= property.town %> <%= property.postcode %></option>
-          <% end } %>
-        </select>
+        <label for="prop_id"><%=@rental.property.prop_name%>, <%=@rental.property.prop_no%>, <%=@rental.property.street_name %>, <%=@rental.property.town %> <%=@rental.property.postcode %></label>
+        <input type="text" name="prop_id" id="prop_id" value="<%=@rental.property.id%>">
       </td>
     </tr>
   </table>

@@ -1,57 +1,60 @@
+<h1>Lease Manager</h1>
 <h1>Edit property listing</h1>
 
-<form action="/properties/<%= @property.id %>" method="post">
+<div class="form>"
+  <form action="/properties/<%= @property.id %>" method="post">
 
-  <p>
-    <label for="prop_name">Property Name</label>
-    <input type="text" name="prop_name" id="prop_name" value="<%= @property.prop_name %>">
-  </p>
-  <p>
-    <label for="prop_no">Property No</label>
-    <input type="text" name="prop_no" id="prop_no" value="<%= @property.prop_no %>">
-  </p>
-  <p>
-    <label for="street_name">Street Name</label>
-    <input type="text" name="street_name" id="street_name" value="<%= @property.street_name %>">
-  </p>
-  <p>
-    <label for="town">Town</label>
-    <input type="text" name="town" id="town" value="<%= @property.town %>">
-  </p>
-  <p>
-    <label for="postcode">Postcode</label>
-    <input type="text" name="postcode" id="postcode" value="<%= @property.postcode %>">
-  </p>
-  <p>
-    <label for="prop_type_selection">Property Type
-      <select name ="prop_type" id="prop_type_selection">
-        <option value="Bungalow" <%= "selected" if @property.prop_type == "Bungalow" %>>Bungalow</option>
-        <option value="Detached" <%= "selected" if @property.prop_type == "Detached" %>>Detached</option>
-        <option value="Semi-detached" <%= "selected" if @property.prop_type == "Semi-detached" %>>Semi-detached</option>
-        <option value="Terraced" <%= "selected" if @property.prop_type == "Terraced" %>>Terraced</option>
-        <option value="Flat/Apartment" <%= "selected" if @property.prop_type == "Flat/Apartment" %>>Flat/Apartment</option>
-        <option value="Maisonette" <%= "selected" if @property.prop_type == "Maisonette" %>>Maisonette</option>
-        <option value="Townhouse" <%= "selected" if @property.prop_type == "Townhouse" %>>Townhouse</option>
-      </select>
-    </label>
-  </p>
-  <p>
-    <label for="bedrooms_selection">Bedrooms
-      <select name="bedrooms" id="bedrooms_selection">
-        <option value="0" <%= "selected" if @property.bedrooms == 0 %>>0</option>
-        <option value="1" <%= "selected" if @property.bedrooms == 1 %>>1</option>
-        <option value="2" <%= "selected" if @property.bedrooms == 2 %>>2</option>
-        <option value="3" <%= "selected" if @property.bedrooms == 3 %>>3</option>
-        <option value="4" <%= "selected" if @property.bedrooms == 4 %>>4</option>
-        <option value="5" <%= "selected" if @property.bedrooms == 5 %>>5</option>
-      </select>
-    </label>
-  </p>
-  <p>
-    <label for="price_pcm">Price (£pcm)</label>
-    <input type="text" name="price_pcm" id="price_pcm" value="<%= @property.price_pcm %>">
-  </p>
-  <p>
-    <input type="submit" value="Update Listing">
-  </p>
-</form>
+    <p>
+      <label for="prop_name">Property Name</label>
+      <input type="text" name="prop_name" id="prop_name" value="<%= @property.prop_name %>">
+    </p>
+    <p>
+      <label for="prop_no">Property No</label>
+      <input type="text" name="prop_no" id="prop_no" value="<%= @property.prop_no %>">
+    </p>
+    <p>
+      <label for="street_name">Street Name</label>
+      <input type="text" name="street_name" id="street_name" value="<%= @property.street_name %>">
+    </p>
+    <p>
+      <label for="town">Town</label>
+      <input type="text" name="town" id="town" value="<%= @property.town %>">
+    </p>
+    <p>
+      <label for="postcode">Postcode</label>
+      <input type="text" name="postcode" id="postcode" value="<%= @property.postcode %>">
+    </p>
+    <p>
+      <label for="prop_type_selection">Property Type
+        <select name ="prop_type" id="prop_type_selection">
+          <option value="Bungalow" <%= "selected" if @property.prop_type == "Bungalow" %>>Bungalow</option>
+          <option value="Detached" <%= "selected" if @property.prop_type == "Detached" %>>Detached</option>
+          <option value="Semi-detached" <%= "selected" if @property.prop_type == "Semi-detached" %>>Semi-detached</option>
+          <option value="Terraced" <%= "selected" if @property.prop_type == "Terraced" %>>Terraced</option>
+          <option value="Flat/Apartment" <%= "selected" if @property.prop_type == "Flat/Apartment" %>>Flat/Apartment</option>
+          <option value="Maisonette" <%= "selected" if @property.prop_type == "Maisonette" %>>Maisonette</option>
+          <option value="Townhouse" <%= "selected" if @property.prop_type == "Townhouse" %>>Townhouse</option>
+        </select>
+      </label>
+    </p>
+    <p>
+      <label for="bedrooms_selection">Bedrooms
+        <select name="bedrooms" id="bedrooms_selection">
+          <option value="0" <%= "selected" if @property.bedrooms == 0 %>>0</option>
+          <option value="1" <%= "selected" if @property.bedrooms == 1 %>>1</option>
+          <option value="2" <%= "selected" if @property.bedrooms == 2 %>>2</option>
+          <option value="3" <%= "selected" if @property.bedrooms == 3 %>>3</option>
+          <option value="4" <%= "selected" if @property.bedrooms == 4 %>>4</option>
+          <option value="5" <%= "selected" if @property.bedrooms == 5 %>>5</option>
+        </select>
+      </label>
+    </p>
+    <p>
+      <label for="price_pcm">Price (£pcm)</label>
+      <input type="text" name="price_pcm" id="price_pcm" value="<%= @property.price_pcm %>">
+    </p>
+    <p>
+      <input type="submit" value="Update Listing">
+    </p>
+  </form>
+</div>

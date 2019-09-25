@@ -1,3 +1,20 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.nav-container {
+  background-color: #2E4A62;
+  text-transform: uppercase;
+  padding: 0px;
+  margin: 0px;
+  height: 5em;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+}
+
 body {
   background-image: url("../images/background-brick.jpg");
   background-size: 100%;
@@ -15,11 +32,10 @@ body {
   padding: 0px;
 } */
 
-/* h1 {
-  font-size: 1.8em;
-  color: darkred;
-  margin-bottom: 20px;
-} */
+h1 {
+  display: flex;
+  justify-content: center;
+}
 
 a, a:link, a:visited {
   color: White;
@@ -37,7 +53,13 @@ nav {
   padding: 0px;
   margin: 0px;
   height: 5em;
+  display: flex;
+  justify-content: space-around;
   /* padding-right: 25px; */
+}
+
+nav a {
+  font-size: 18px;
 }
 
 /* nav ul li {
@@ -77,9 +99,4 @@ main {
 
 a.show {
   color: #BFD641;
-}
-
-.form {
-  display: inline-block;
-  background-color: White;
 }
