@@ -1,31 +1,29 @@
 <h1>Leases</h1>
 
 <div class="form">
-  <table class="bg-white">
-    <tr><th class="main" colspan="7">Lease Details</th></tr>
+  <table>
+    <tr><th class="main" colspan="7">Leased Properties</th></tr>
       <tr>
         <th>Property Name</th>
         <th>Property No</th>
         <th>Street Name</th>
         <th>Town</th>
         <th>Postcode</th>
+        <th>Lease Commencement Date</th>
         <th>Tenant Count</th>
-        <th></th>
       </tr>
-<% @rentals.each() { |rental| if rental.property.prop_status == "leased"%>
+ <% @rentals.each() { |rental| if rental.property.prop_status == "leased"%>
     <tr>
-
       <td><%=rental.property.prop_name%></td>
       <td><%=rental.property.prop_no%></td>
       <td><%=rental.property.street_name%></td>
       <td><%=rental.property.town%></td>
       <td><%=rental.property.postcode%></td>
       <td>T.B.A.</td>
-      <td><a class="show" href="/rentals/<%= rental.id %>">View Details</a></td>
-
-      </tr>
-  <% end } %>
+      <td>T.B.A.</td>
+    </tr>
+   <% end } %>
   </table>
 </div>
 
-<p><a href="/rentals/new">Create Tenancy</a></p>
+<p><a href="/rentals/new">Create New Lease</a></p>

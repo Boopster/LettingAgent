@@ -18,7 +18,7 @@ get '/rentals/new' do
 end
 
 get '/rentals/:id' do
-  @rental = Rental.find( params[:id] )
+  @rental = Rental.find(params[:id])
   erb(:"rentals/show")
 end
 
@@ -26,15 +26,14 @@ post '/rentals' do
   rental = Rental.new(params)
   rental.save()
   rental.property.update_status_leased()
-  rental.tenant.update_status_active()
   redirect to("/rentals")
 end
 
-# post '/rentals/:id' do
-#   @rental = Rental.find(params[:id])
-#   @rental.update()
-#   redirect to("/rentals")
-# end
+post '/rentals/:id' do
+  @rental = Rental.find(params[:id])
+  @rental.update()
+  redirect to("/rentals")
+end
 
 post '/rentals/:id/delete' do
   @rental = Rental.find(params[:id])

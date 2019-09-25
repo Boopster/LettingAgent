@@ -97,6 +97,11 @@ class Property
     SqlRunner.run(sql,values)
   end
 
+  def self.delete_all()
+   sql = "DELETE FROM properties"
+   SqlRunner.run( sql )
+ end
+
   # SHOW ALL LISTINGS
 
   def self.all()

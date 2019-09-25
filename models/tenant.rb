@@ -57,8 +57,8 @@ class Tenant
     sql = "UPDATE tenants
     SET tenant_status = $1
     WHERE id = $2"
-    values = [@tenant_status,@id]
     @tenant_status = "active"
+    values = [@tenant_status,@id]
     SqlRunner.run(sql,values)
   end
 
@@ -66,8 +66,8 @@ class Tenant
     sql = "UPDATE tenants
     SET tenant_status = $1
     WHERE id = $2"
-    values = [@tenant_status,@id]
     @tenant_status = "inactive"
+    values = [@tenant_status,@id]
     SqlRunner.run(sql,values)
   end
 
@@ -79,6 +79,11 @@ class Tenant
     values = [@id]
     SqlRunner.run(sql,values)
   end
+
+  def self.delete_all()
+   sql = "DELETE FROM tenants"
+   SqlRunner.run( sql )
+ end
 
   # SHOW ALL TENANTS
 
