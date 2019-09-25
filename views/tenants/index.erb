@@ -11,10 +11,10 @@
   </tr>
     <% @tenants.each { |tenant| %>
   <tr>
-    <td><%= tenant.first_name %></td>
-    <td><%= tenant.last_name %></td>
-    <td><%= tenant.contact_no %></td>
-    <td><%= tenant.email %></td>
+    <td class="column"><%= tenant.first_name %></td>
+    <td class="column" class="column"><%= tenant.last_name %></td>
+    <td class="column"><%= tenant.contact_no %></td>
+    <td class="column"><%= tenant.email %></td>
     <td><a class="show" href="/tenants/<%= tenant.id %>">View Details</a></td>
   </tr>
     <% } %>

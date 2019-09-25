@@ -14,11 +14,11 @@
       </tr>
  <% @rentals.each() { |rental| if rental.property.prop_status == "leased"%>
     <tr>
-      <td><%=rental.property.prop_name%></td>
+      <td class="column"><%=rental.property.prop_name%></td>
       <td><%=rental.property.prop_no%></td>
-      <td><%=rental.property.street_name%></td>
-      <td><%=rental.property.town%></td>
-      <td><%=rental.property.postcode%></td>
+      <td class="column"><%=rental.property.street_name%></td>
+      <td class="column"><%=rental.property.town%></td>
+      <td class="column"><%=rental.property.postcode%></td>
       <td>T.B.A.</td>
       <td>T.B.A.</td>
     </tr>

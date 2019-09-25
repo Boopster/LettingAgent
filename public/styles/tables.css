@@ -42,6 +42,7 @@ td {
   background-color: White;
   color: Black;
   font-weight: normal;
+  width: 150px;
 }
 
 td.column {
