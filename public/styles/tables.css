@@ -62,13 +62,10 @@
 }
 
 table {
-  margin: 10px;
   text-align: center;
+  display: flex;
 }
 
-.table-leased th {
-
-}
 
 /* th, td {
   width: 12vw;

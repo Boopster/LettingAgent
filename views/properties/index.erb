@@ -1,7 +1,6 @@
 <div class="form-container">
   <div class="form">
       <table>
-        <thead>
           <tr>
             <th class ="main" colspan="9">Property Listings</th>
           </tr>
@@ -16,9 +15,7 @@
             <th>Price(£pcm)</th>
             <th></th>
           </tr>
-        </thead>
             <% @properties.each { |property| if property.prop_status == "listed"%>
-            <tbody>
           <tr>
             <td><%= property.prop_name %></td>
             <td><%= property.prop_no %></td>
@@ -30,7 +27,6 @@
             <td><%= property.price_pcm %></td>
             <td><a class="show" href="/properties/<%= property.id %>">View Details</a></td>
           </tr>
-          </tbody>
           <% end } %>
       </table>
   </div>
