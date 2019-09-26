@@ -58,23 +58,28 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 table {
-  margin: 25px auto;
+  margin: 10px;
   text-align: center;
 }
 
-th, td {
-  width: 12vw;
+.table-leased th {
+
 }
 
+/* th, td {
+  width: 12vw;
+} */
+
 td {
-  padding: 10px 20px 10px 20px;
+  padding: 10px 10px 10px 10px;
   background-color: White;
   color: Black;
   font-weight: normal;
-  width: 120px;
+  /* width: 120px; */
 }
 
 /* background-color: #577284; */
@@ -95,4 +100,15 @@ th.main {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.form-container {
+  display: flex;
+  justify-content: center;
+}
+
+.form {
+  margin: 0;
+  padding: 0;
+  background-image: linear-gradient(to right, #f5f5ef, #ebebe0);
 }

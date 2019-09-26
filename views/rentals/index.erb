@@ -1,34 +1,31 @@
-<h1>Lease Manager</h1>
-<h1>Leases</h1>
-
-<div class="form">
-  <div id="container">
-  <table class="container">
-    <tr><th class="main" colspan="8">Leased Properties</th></tr>
+<div class="form-container">
+    <div class="form">
+    <table class="leased">
+      <tr><th class="main" colspan="8">Leased Properties</th></tr>
+        <tr>
+          <th>Property Name</th>
+          <th>Property No</th>
+          <th>Street Name</th>
+          <th>Town</th>
+          <th>Postcode</th>
+          <th>Lease Start Date</th>
+          <th>Tenant Count</th>
+          <th></th>
+        </tr>
+    <% @rentals.each() { |rental| if rental.property.prop_status == "leased"%>
       <tr>
-        <th>Property Name</th>
-        <th>Property No</th>
-        <th>Street Name</th>
-        <th>Town</th>
-        <th>Postcode</th>
-        <th>Lease Start Date</th>
-        <th>Tenant Count</th>
-        <th></th>
+        <td class="column"><%=rental.property.prop_name%></td>
+        <td><%=rental.property.prop_no%></td>
+        <td class="column"><%=rental.property.street_name%></td>
+        <td class="column"><%=rental.property.town%></td>
+        <td class="column"><%=rental.property.postcode%></td>
+        <td>T.B.A.</td>
+        <td>T.B.A.</td>
+        <td><a class="show" href="/rentals/<%=rental.id%>">Add Tenant</a></td>
       </tr>
- <% @rentals.each() { |rental| if rental.property.prop_status == "leased"%>
-    <tr>
-      <td class="column"><%=rental.property.prop_name%></td>
-      <td><%=rental.property.prop_no%></td>
-      <td class="column"><%=rental.property.street_name%></td>
-      <td class="column"><%=rental.property.town%></td>
-      <td class="column"><%=rental.property.postcode%></td>
-      <td>T.B.A.</td>
-      <td>T.B.A.</td>
-      <td><a class="show" href="/rentals/<%=rental.id%>">Add Tenant</a></td>
-    </tr>
-   <% end } %>
-  </table>
-</div>
+     <% end } %>
+    </table>
+    </div>
 </div>
 
 <p>

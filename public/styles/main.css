@@ -11,7 +11,8 @@
   margin: 0px;
   height: 5em;
   display: flex;
-  justify-content: center;
+  /* justify-content: center; */
+  align-items: stretch;
   position: fixed;
 }
 
@@ -32,15 +33,10 @@ body {
   padding: 0px;
 } */
 
-h1 {
-  display: flex;
-  justify-content: center;
-}
-
 a, a:link, a:visited {
   color: White;
   text-decoration: none;
-  padding: 20px;
+  /* padding: 20px; */
 }
 
 a:hover, a:active, a:focus {
@@ -55,11 +51,20 @@ nav {
   height: 5em;
   display: flex;
   justify-content: space-around;
+  align-items: center;
   /* padding-right: 25px; */
 }
 
 nav a {
   font-size: 18px;
+  max-width: 20%;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
 }
 
 /* nav ul li {
@@ -99,4 +104,17 @@ main {
 
 a.show {
   color: #BFD641;
+  font-weight: bold;
+}
+
+/* a.offset {
+  padding-left: 80px;
+} */
+
+img.click {
+  /* margin-top: 20px; */
+  margin: 0;
+  padding: 0;
+  height: 50%;
+  width: 50%;
 }

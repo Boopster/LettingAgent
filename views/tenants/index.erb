@@ -1,27 +1,24 @@
-<h1>Lease Manager</h1>
-<h1>Tenants</h1>
-
-<div class="form">
-  <div id="container">
-    <table class="container">
-    <tr><th colspan="5" class="main">Tenant Details</th></tr>
-    <tr>
-      <th>First Name(s)</th>
-      <th>Last Name</th>
-      <th>Contact No</th>
-      <th>Email</th>
-      <th></th>
-    </tr>
-      <% @tenants.each { |tenant| %>
-    <tr>
-      <td class="column"><%= tenant.first_name %></td>
-      <td class="column" class="column"><%= tenant.last_name %></td>
-      <td class="column"><%= tenant.contact_no %></td>
-      <td class="column"><%= tenant.email %></td>
-      <td><a class="show" href="/tenants/<%= tenant.id %>">View Details</a></td>
-    </tr>
-      <% } %>
-    </table>
+<div class="form-container">
+  <div class="form">
+      <table>
+      <tr><th colspan="5" class="main">Tenant Details</th></tr>
+      <tr>
+        <th>First Name(s)</th>
+        <th>Last Name</th>
+        <th>Contact No</th>
+        <th>Email</th>
+        <th></th>
+      </tr>
+        <% @tenants.each { |tenant| %>
+      <tr>
+        <td class="column"><%= tenant.first_name %></td>
+        <td class="column" class="column"><%= tenant.last_name %></td>
+        <td class="column"><%= tenant.contact_no %></td>
+        <td class="column"><%= tenant.email %></td>
+        <td><a class="show" href="/tenants/<%= tenant.id %>">View Details</a></td>
+      </tr>
+        <% } %>
+      </table>
   </div>
 </div>
 

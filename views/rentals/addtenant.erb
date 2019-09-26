@@ -1,34 +1,34 @@
-<h1>Lease Manager</h1>
-<h1>Add tenant to lease</h1>
-
 <form action="/rentals" method="post">
-<div class="form">
-  <table>
-    <tr>
-      <th class="main">Property:</th>
-    </tr>
-    <tr>
-      <td>
-        <label for="prop_id"><%=@rental.property.prop_name%>, <%=@rental.property.prop_no%>, <%=@rental.property.street_name %>, <%=@rental.property.town %> <%=@rental.property.postcode %></label>
-        <input type="text" name="prop_id" id="prop_id" value="<%=@rental.property.id%>">
-      </td>
-    </tr>
-  </table>
 
-  <table>
-    <tr>
-      <th class="main">Select a tenant:</th>
-    </tr>
-    <tr>
-    <td>
-      <select name="tenant_id">
-        <% @tenants.each() { |tenant| if tenant.tenant_status == "inactive"%>
-        <option value="<%=tenant.id%>"><%=tenant.last_name%>, <%=tenant.first_name%></option>
-        <% end } %>
-      </select>
-    </td>
-    </tr>
-  </table>
+<div class="form-container">
+  <div class="form">
+    <table>
+      <tr>
+        <th class="main">Property:</th>
+      </tr>
+      <tr>
+        <td>
+          <label for="prop_id"><%=@rental.property.prop_name%>, <%=@rental.property.prop_no%>, <%=@rental.property.street_name %>, <%=@rental.property.town %> <%=@rental.property.postcode %></label>
+          <input type="text" name="prop_id" id="prop_id" value="<%=@rental.property.id%>">
+        </td>
+      </tr>
+    </table>
+
+    <table>
+      <tr>
+        <th class="main">Select a tenant:</th>
+      </tr>
+      <tr>
+      <td>
+        <select name="tenant_id">
+          <% @tenants.each() { |tenant| if tenant.tenant_status == "inactive"%>
+          <option value="<%=tenant.id%>"><%=tenant.last_name%>, <%=tenant.first_name%></option>
+          <% end } %>
+        </select>
+      </td>
+      </tr>
+    </table>
+  </div>
 </div>
   <p><input type='submit' value="Add New Lease"></p>
 </form>
