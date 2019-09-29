@@ -3,21 +3,52 @@
 
     <form action="/tenants/<%= @tenant.id %>" method="post">
 
-      <label for="first_name">First Names(s)</label>
-      <input type="text" name="first_name" id="first_name" value="<%= @tenant.first_name %>">
+      <table>
+        <tr>
+          <th class="main" colspan="2">Edit Contact</th>
+        </tr>
+        <tr>
+          <td>
+            <label for="first_name">First Names(s):</label>
+          </td>
+          <td>
+            <input type="text" name="first_name" id="first_name" value="<%= @tenant.first_name %>">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="last_name">Last Name:</label>
+          </td>
+          <td>
+            <input type="text" name="last_name" id="last_name" value="<%= @tenant.last_name %>">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="contact_no">Contact No:</label>
+          </td>
+          <td>
+            <input type="text" name="contact_no" id="contact_no" value="<%= @tenant.contact_no %>">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="email">Email:</label>
+          </td>
+          <td>
+            <input type="text" name="email" id="email" value="<%= @tenant.email %>">
+          </td>
+        </tr>
 
-      <label for="last_name">Last Name</label>
-      <input type="text" name="last_name" id="last_name" value="<%= @tenant.last_name %>">
+      </table>
 
-      <label for="contact_no">Contact No</label>
-      <input type="text" name="contact_no" id="contact_no" value="<%= @tenant.contact_no %>">
+      <br>
 
-      <label for="email">Email</label>
-      <input type="text" name="email" id="email" value="<%= @tenant.email %>">
-
-      <input class="btn" type="submit" value="Update Tenant">
+      <div class="btn--wrapper">
+        <input class="btn" type="submit" value="Update Contact">
+      </div>
 
     </form>
-    
+
   </div>
 </div>

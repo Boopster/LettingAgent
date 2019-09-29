@@ -1,6 +1,6 @@
 .btn {
   background-color: #FB9039;
-  border:2px solid #FB9039;
+  border:5px solid #FB9039;
   border-radius: 5px;
   padding: 8px 12px;
   color: White;
@@ -9,16 +9,19 @@
 }
 
 .btn:hover {
-  border-radius: 5px;
-  border: 5px solid #FB9039;
   background-color: White;
+  border: 5px solid #FB9039;
+  border-radius: 5px;
   color: #FB9039;
   font-weight: bold;
 }
 
+.btn--double {
+  display: flex;
+  justify-content: space-around;
+}
+
 .btn--wrapper {
-  /* display: flex;
-  justify-content: center; */
-  align-items: center;
-  text-align: center;
+  display: flex;
+  justify-content: center;
 }
