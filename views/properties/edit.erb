@@ -1,5 +1,6 @@
 <div class="form-container">
   <div class="form>"
+    
     <form action="/properties/<%= @property.id %>" method="post">
 
       <p>
@@ -51,9 +52,10 @@
         <label for="price_pcm">Price (£pcm)</label>
         <input type="text" name="price_pcm" id="price_pcm" value="<%= @property.price_pcm %>">
       </p>
-      <p>
-        <input type="submit" value="Update Listing">
-      </p>
+      <br>
+
+      <input class="btn" type="submit" value="Update Listing">
     </form>
+
   </div>
 </div>

@@ -1,7 +1,7 @@
-<form action="/rentals" method="post">
-
 <div class="form-container">
   <div class="form">
+    <form action="/rentals" method="post">
+
     <table>
       <tr>
         <th class="main">Property:</th>
@@ -9,7 +9,7 @@
       <tr>
         <td>
           <label for="prop_id"><%=@rental.property.prop_name%>, <%=@rental.property.prop_no%>, <%=@rental.property.street_name %>, <%=@rental.property.town %> <%=@rental.property.postcode %></label>
-          <input type="text" name="prop_id" id="prop_id" value="<%=@rental.property.id%>">
+          <input type="hidden" name="prop_id" id="prop_id" value="<%=@rental.property.id%>">
         </td>
       </tr>
     </table>
@@ -28,7 +28,10 @@
       </td>
       </tr>
     </table>
+    <br>
+
+    <input class="btn" type='submit' value="Add Tenant">
+    </form>
+
   </div>
 </div>
-  <p><input type='submit' value="Add New Lease"></p>
-</form>

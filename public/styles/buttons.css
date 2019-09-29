@@ -1,0 +1,24 @@
+.btn {
+  background-color: #FB9039;
+  border:2px solid #FB9039;
+  border-radius: 5px;
+  padding: 8px 12px;
+  color: White;
+  cursor:pointer;
+  font-weight: bold;
+}
+
+.btn:hover {
+  border-radius: 5px;
+  border: 5px solid #FB9039;
+  background-color: White;
+  color: #FB9039;
+  font-weight: bold;
+}
+
+.btn--wrapper {
+  /* display: flex;
+  justify-content: center; */
+  align-items: center;
+  text-align: center;
+}

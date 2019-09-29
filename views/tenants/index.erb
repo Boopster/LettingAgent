@@ -1,27 +1,30 @@
 <div class="form-container">
   <div class="form">
-      <table>
-      <tr><th colspan="5" class="main">Tenant Details</th></tr>
-      <tr>
-        <th>First Name(s)</th>
-        <th>Last Name</th>
-        <th>Contact No</th>
-        <th>Email</th>
-        <th></th>
-      </tr>
-        <% @tenants.each { |tenant| %>
-      <tr>
-        <td class="column"><%= tenant.first_name %></td>
-        <td class="column" class="column"><%= tenant.last_name %></td>
-        <td class="column"><%= tenant.contact_no %></td>
-        <td class="column"><%= tenant.email %></td>
-        <td><a class="show" href="/tenants/<%= tenant.id %>">View Details</a></td>
-      </tr>
-        <% } %>
-      </table>
+
+    <table>
+    <tr><th colspan="5" class="main">Contacts</th></tr>
+    <tr>
+      <th>First Name(s)</th>
+      <th>Last Name</th>
+      <th>Contact No</th>
+      <th>Email</th>
+      <th></th>
+    </tr>
+      <% @tenants.each { |tenant| %>
+    <tr>
+      <td class="column"><%= tenant.first_name %></td>
+      <td class="column" class="column"><%= tenant.last_name %></td>
+      <td class="column"><%= tenant.contact_no %></td>
+      <td class="column"><%= tenant.email %></td>
+      <td><a class="show" href="/tenants/<%= tenant.id %>">View Details</a></td>
+    </tr>
+      <% } %>
+    </table>
+    <br>
+
+    <div class="btn--wrapper">
+      <a class="btn" href="/tenants/new">Add Contact</a>
+    </div>
+
   </div>
 </div>
-
-<p>
-  <a href="/tenants/new">Add New Tenant</a>
-</p>

@@ -74,21 +74,23 @@ table {
 td {
   padding: 10px 10px 10px 10px;
   background-color: White;
-  color: Black;
+  color: 	#696969;
   font-weight: normal;
+  border-radius: 5px;
   /* width: 120px; */
 }
 
 /* background-color: #577284; */
 th {
    padding: 10px 20px 10px 20px;
-   background-color: #E08119;
+   background-color: #FB9039;
    color: White;
    font-weight: bold;
+   border-radius: 5px;
 }
 
 th.main {
-  background-color: #577284;
+  background-color: #646C79;
   height: 75px;
 }
 
@@ -106,6 +108,7 @@ th.main {
 
 .form {
   margin: 0;
-  padding: 0;
+  padding: 10px 10px 20px 10px;
   background-image: linear-gradient(to right, #f5f5ef, #ebebe0);
+  border-radius: 5px;
 }

@@ -1,37 +1,40 @@
 <div class="form-container">
   <div class="form">
-      <table>
-          <tr>
-            <th class ="main" colspan="9">Property Listings</th>
-          </tr>
-          <tr>
-            <th>Property Name</th>
-            <th>Property No</th>
-            <th>Street Name</th>
-            <th>Town</th>
-            <th>Postcode</th>
-            <th>Property Type</th>
-            <th>Bedrooms</th>
-            <th>Price(£pcm)</th>
-            <th></th>
-          </tr>
-            <% @properties.each { |property| if property.prop_status == "listed"%>
-          <tr>
-            <td><%= property.prop_name %></td>
-            <td><%= property.prop_no %></td>
-            <td><%= property.street_name %></td>
-            <td><%= property.town %></td>
-            <td><%= property.postcode %></td>
-            <td><%= property.prop_type %></td>
-            <td><%= property.bedrooms %></td>
-            <td><%= property.price_pcm %></td>
-            <td><a class="show" href="/properties/<%= property.id %>">View Details</a></td>
-          </tr>
-          <% end } %>
-      </table>
+
+    <table>
+        <tr>
+          <th class ="main" colspan="9">Property Listings</th>
+        </tr>
+        <tr>
+          <th>Property Name</th>
+          <th>Property No</th>
+          <th>Street Name</th>
+          <th>Town</th>
+          <th>Postcode</th>
+          <th>Property Type</th>
+          <th>Bedrooms</th>
+          <th>Price(£pcm)</th>
+          <th></th>
+        </tr>
+          <% @properties.each { |property| if property.prop_status == "listed"%>
+        <tr>
+          <td><%= property.prop_name %></td>
+          <td><%= property.prop_no %></td>
+          <td><%= property.street_name %></td>
+          <td><%= property.town %></td>
+          <td><%= property.postcode %></td>
+          <td><%= property.prop_type %></td>
+          <td><%= property.bedrooms %></td>
+          <td><%= property.price_pcm %></td>
+          <td><a class="show" href="/properties/<%= property.id %>">View Details</a></td>
+        </tr>
+        <% end } %>
+    </table>
+    <br>
+
+    <div class="btn--wrapper">
+      <a class="btn" href="/properties/new">Add New Listing</a>
+    </div>
+
   </div>
 </div>
-
-<p>
-  <a href="/properties/new">Add New Listing</a>
-</p>

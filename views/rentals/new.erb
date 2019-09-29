@@ -1,34 +1,41 @@
-<form action="/rentals" method="post">
-<div class="form">
-  <table>
-    <tr>
-      <th class="main">Select a property:</th>
-    </tr>
-    <tr>
+<div class="form=container">
+  <div class="form">
+
+    <form action="/rentals" method="post">
+
+    <table>
+      <tr>
+        <th class="main">Select a property:</th>
+      </tr>
+      <tr>
+        <td>
+          <select name="prop_id">
+            <% @properties.each() { |property| if property.prop_status == "listed"%>
+            <option value="<%=property.id%>"><%=property.prop_name%>, <%=property.prop_no%>, <%= property.street_name %>, <%= property.town %> <%= property.postcode %></option>
+            <% end } %>
+          </select>
+        </td>
+      </tr>
+    </table>
+
+    <table>
+      <tr>
+        <th class="main">Select a tenant:</th>
+      </tr>
+      <tr>
       <td>
-        <select name="prop_id">
-          <% @properties.each() { |property| if property.prop_status == "listed"%>
-          <option value="<%=property.id%>"><%=property.prop_name%>, <%=property.prop_no%>, <%= property.street_name %>, <%= property.town %> <%= property.postcode %></option>
+        <select name="tenant_id">
+          <% @tenants.each() { |tenant| if tenant.tenant_status == "inactive"%>
+          <option value="<%=tenant.id%>"><%=tenant.last_name%>, <%=tenant.first_name%></option>
           <% end } %>
         </select>
       </td>
-    </tr>
-  </table>
+      </tr>
+    </table>
+    <br>
 
-  <table>
-    <tr>
-      <th class="main">Select a tenant:</th>
-    </tr>
-    <tr>
-    <td>
-      <select name="tenant_id">
-        <% @tenants.each() { |tenant| if tenant.tenant_status == "inactive"%>
-        <option value="<%=tenant.id%>"><%=tenant.last_name%>, <%=tenant.first_name%></option>
-        <% end } %>
-      </select>
-    </td>
-    </tr>
-  </table>
+    <input class="btn" type='submit' value="Add New Lease">
+    </form>
+
+  </div>
 </div>
-  <p><input type='submit' value="Add New Lease"></p>
-</form>
