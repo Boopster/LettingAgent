@@ -6,6 +6,10 @@
   color: White;
   cursor:pointer;
   font-weight: bold;
+  width: 150px;
+  margin: 10px;
+  display: flex;
+  justify-content: center;
 }
 
 .btn:hover {
@@ -16,7 +20,7 @@
   font-weight: bold;
 }
 
-.btn--double {
+.btn--row {
   display: flex;
   justify-content: space-around;
 }

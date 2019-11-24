@@ -30,5 +30,6 @@ CREATE TABLE rentals
 (
   id SERIAL8 PRIMARY KEY,
   prop_id INT8 REFERENCES properties(id) ON DELETE CASCADE,
-  tenant_id INT8 REFERENCES tenants(id) ON DELETE CASCADE
+  tenant_id INT8 REFERENCES tenants(id) ON DELETE CASCADE,
+  start_date DATE
 );

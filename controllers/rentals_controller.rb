@@ -1,6 +1,7 @@
 require( 'sinatra' )
 require( 'sinatra/contrib/all' )
 require( 'pry-byebug' )
+require( 'date' )
 require_relative( '../models/rental.rb' )
 require_relative( '../models/property.rb' )
 require_relative( '../models/tenant.rb' )
@@ -23,10 +24,17 @@ get '/rentals/:id' do
   erb(:"rentals/addtenant")
 end
 
+get '/rentals/:id/show' do
+  @rental = Rental.find(params[:id])
+  @rentals = Rental.all()
+  erb(:"rentals/show")
+end
+
 post '/rentals' do
   rental = Rental.new(params)
   rental.save()
   rental.property.update_status_leased()
+  rental.tenant.update_status_active()
   redirect to("/rentals")
 end
 

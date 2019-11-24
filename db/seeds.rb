@@ -90,7 +90,7 @@ tenant4 = Tenant.new({
   "first_name" => "Mairi",
   "last_name" => "Beaton",
   "contact_no" => "0456 789 0123",
-  "email" => "mazza@email.com"
+  "email" => "mazzabee@email.com"
 })
 
 tenant4.save()
