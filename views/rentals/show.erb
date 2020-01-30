@@ -1,7 +1,7 @@
 <div class="form-container">
   <div class="form">
 
-    <a class="show" href="/rentals/<%=@rental.id%>">Add Tenant</a>
+    <!-- <a class="show" href="/rentals/@rental.id%>">Add Tenant</a> -->
     <table>
       <tr>
         <th class="main">Lease Details</th>
@@ -11,16 +11,19 @@
       </tr>
       <tr>
         <td class="column">
-          <p><%=@rental.property.prop_name%>, <%=@rental.property.prop_no%> <%=@rental.property.street_name%>,  <%=@rental.property.town%>, <%=@rental.property.postcode%></p>
-          <p>Property Type: <%= @rental.property.prop_type %></p>
-          <p>Bedrooms: <%= @rental.property.bedrooms %></p>
-          <p>Price(£pcm): <%= @rental.property.price_pcm %></p>
+          <!-- <p><@rental.property.prop_name%> -->
+          <!-- <p><@rental.property.prop_name%>, <@rental.property.prop_no%> <@rental.property.street_name%>,  <@rental.property.town%>, <@rental.property.postcode%></p>
+          <p>Property Type: <@rental.property.prop_type %></p>
+          <p>Bedrooms: <@rental.property.bedrooms %></p>
+          <p>Price(£pcm): <@rental.property.price_pcm %></p> -->
         </td>
       </tr>
       <tr>
         <th>Tenants</th>
       </tr>
-
+      <tr>
+        <td></td>
+      </tr>
     </table>
 
     <br>
@@ -34,7 +37,7 @@
     <!-- </div> -->
 
     <div class="btn--wrapper">
-      <form method="get" action="/rentals/<%=@rental.id%>/edit">
+      <form method="get" action="/rentals/<@rental.id%>/edit">
         <input class="btn" type="submit" value="Edit Lease">
       </form>
     </div>

@@ -21,13 +21,14 @@ end
 get '/rentals/:id' do
   @rental = Rental.find(params[:id])
   @tenants = Tenant.all()
-  erb(:"rentals/addtenant")
+  # erb(:"rentals/addtenant")
+  erb(:"rentals/show")
 end
 
-get '/rentals/:id/show' do
+get '/rentals/:id/edit' do
   @rental = Rental.find(params[:id])
   @rentals = Rental.all()
-  erb(:"rentals/show")
+  erb(:"rentals/edit")
 end
 
 post '/rentals' do
@@ -39,8 +40,9 @@ post '/rentals' do
 end
 
 post '/rentals/:id' do
-  @rental = Rental.find(params[:id])
-  @rental.update()
+  # @rental = Rental.find(params[:id])
+  # @rental.update()
+  Rental.new(params).update()
   redirect to("/rentals")
 end
 

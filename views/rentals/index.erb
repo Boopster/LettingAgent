@@ -2,7 +2,9 @@
   <div class="form">
 
     <table>
-      <tr><th class="main" colspan="8">Leased Properties</th></tr>
+      <tr>
+        <th class="main" colspan="8">Leased Properties</th>
+      </tr>
         <tr>
           <th>Property Name</th>
           <th>Property No</th>
@@ -22,8 +24,8 @@
         <td class="column"><%=rental.property.postcode%></td>
         <td class="column"><%=rental.start_date%></td>
         <td class="column"> </td>
-        <!-- <td><a class="show" href="/rentals/<%=rental.id%>">Add Tenant</a></td> -->
-        <td><a class="show" href="/rentals/<%=rental.id%>/show">View Details</a></td>
+        <!-- <td><a class="show" href="/rentals/rental.id%>">Add Tenant</a></td> -->
+        <td><a class="show" href="/rentals/<%=rental.id%>">View Details</a></td>
       </tr>
      <% end } %>
     </table>
