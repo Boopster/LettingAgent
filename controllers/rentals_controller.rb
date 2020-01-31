@@ -27,8 +27,8 @@ end
 
 get '/rentals/:id/edit' do
   @rental = Rental.find(params[:id])
-  @rentals = Rental.all()
-  erb(:"rentals/edit")
+  # @rentals = Rental.all()
+  erb(:"rentals/addtenant")
 end
 
 post '/rentals' do

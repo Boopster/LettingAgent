@@ -11,6 +11,7 @@
       </tr>
       <tr>
         <td class="column">
+          <p><%=@rental%></p>
           <!-- <p><@rental.property.prop_name%> -->
           <!-- <p><@rental.property.prop_name%>, <@rental.property.prop_no%> <@rental.property.street_name%>,  <@rental.property.town%>, <@rental.property.postcode%></p>
           <p>Property Type: <@rental.property.prop_type %></p>
@@ -30,14 +31,14 @@
 
   <div class="btn--row">
 
-    <!-- <div class="btn--wrapper"> -->
-      <!-- <form method="post" action="/rentals/<@rental.id%>/delete">
+    <div class="btn--wrapper">
+      <form method="post" action="/rentals/<%=@rental.id%>/delete">
         <input class="btn" type="submit" value="Terminate Lease">
-      </form> -->
-    <!-- </div> -->
+      </form>
+    </div>
 
     <div class="btn--wrapper">
-      <form method="get" action="/rentals/<@rental.id%>/edit">
+      <form method="get" action="/rentals/<%= @rental.id %>/edit">
         <input class="btn" type="submit" value="Edit Lease">
       </form>
     </div>
