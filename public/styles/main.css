@@ -10,6 +10,7 @@ input {
 }
 
 nav {
+  font-family: Bahnschrift nameplate, Arial, sans-serif;
   background-color: #1F3044;
   text-transform: uppercase;
   padding: 0px;

@@ -20,7 +20,7 @@
   font-weight: bold;
 }
 
-.btn--row {
+.btn--double {
   display: flex;
   justify-content: space-around;
 }
