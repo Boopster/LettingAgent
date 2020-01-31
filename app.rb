@@ -7,5 +7,5 @@ also_reload('./models/*')
 
 get '/' do
   @properties = Property.all()
-  erb(:index)
+  erb(:"properties/index")
 end
