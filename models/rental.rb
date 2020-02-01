@@ -15,7 +15,7 @@ class Rental
     sql = "INSERT INTO rentals
     (
       prop_id,
-      tenant_id,
+      tenant_id
       start_date
     )
     VALUES

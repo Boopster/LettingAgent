@@ -34,7 +34,7 @@ end
 post '/rentals' do
   rental = Rental.new(params)
   rental.save()
-  rental.property.update_status_leased()
+  rental.property.update_status_leased
   rental.tenant.update_status_active()
   redirect to("/rentals")
 end
