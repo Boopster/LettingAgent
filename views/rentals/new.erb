@@ -1,35 +1,47 @@
-<div class="form=container">
+<div class="form-container">
   <div class="form">
 
     <form action="/rentals" method="post">
 
     <table>
       <tr>
-        <th class="main">Select a property:</th>
+        <th colspan="2" class="main">Create New Lease</th>
       </tr>
       <tr>
         <td>
-          <select name="prop_id">
-            <% @properties.each() { |property| if property.prop_status == "listed"%>
-            <option value="<%=property.id%>"><%=property.prop_name%>, <%=property.prop_no%>, <%= property.street_name %>, <%= property.town %> <%= property.postcode %></option>
-            <% end } %>
-          </select>
+          <label for="prop_id_selection">Select a Property:</label>
+        </td>
+        <td>
+          <label for="prop_id">
+            <select name="prop_id" id="prop_id">
+              <% @properties.each() { |property| if property.prop_status == "listed"%>
+              <option value="<%=property.id%>"><%=property.prop_name%>, <%=property.prop_no%>, <%= property.street_name %>, <%= property.town %> <%= property.postcode %></option>
+              <% end } %>
+            </select>
+          </label>
         </td>
       </tr>
-    </table>
-
-    <table>
       <tr>
-        <th class="main">Select a tenant:</th>
+        <td>
+          <label for="tenant_id_selection">Select a Tenant:</label>
+        </td>
+        <td>
+          <label for="tenant_id">
+          <select name="tenant_id" id="tenant_id">
+              <% @tenants.each() { |tenant| if tenant.tenant_status == "inactive"%>
+              <option value="<%=tenant.id%>"><%=tenant.last_name%>, <%=tenant.first_name%></option>
+              <% end } %>
+          </select>
+          </label>
+        </td>
       </tr>
       <tr>
-      <td>
-        <select name="tenant_id">
-          <% @tenants.each() { |tenant| if tenant.tenant_status == "inactive"%>
-          <option value="<%=tenant.id%>"><%=tenant.last_name%>, <%=tenant.first_name%></option>
-          <% end } %>
-        </select>
-      </td>
+        <td>
+          <label for="start_date">Start Date:</label>
+        </td>
+        <td>
+          <input type="date" name = "start_date" id="start_date">
+        </td>
       </tr>
       <tr>
         <th class="main">Select start date:</th>
@@ -44,7 +56,10 @@
     </table>
     <br>
 
-    <input class="btn" type='submit' value="Add New Lease">
+    <div class="btn-wrapper">
+      <input class="btn" type='submit' value="Add Lease">
+    </div>
+
     </form>
 
   </div>

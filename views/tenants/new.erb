@@ -1,26 +1,53 @@
 <div class="form-container">
   <div class="form">
 
+
     <form action="/tenants" method="post">
-      <p>
-        <label for="first_name">First Name(s)</label>
-        <input type="text" name="first_name" id="first_name">
-      </p>
-      <p>
-        <label for="last_name">Last Name</label>
-        <input type="text" name="last_name" id="last_name">
-      </p>
-      <p>
-        <label for="contact_no">Contact No</label>
-        <input type="text" name="contact_no" id="contact_no">
-      </p>
-      <p>
-        <label for="email">Email</label>
-        <input type="text" name="email" id="email">
-      </p>
+
+      <table>
+        <tr>
+          <th colspan="2" class="main">Create New Contact</th>
+        </tr>
+        <tr>
+          <td>
+            <label for="first_name">First Name(s)</label>
+          </td>
+          <td>
+            <input type="text" name="first_name" id="first_name">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="last_name">Last Name</label>
+          </td>
+          <td>
+            <input type="text" name="last_name" id="last_name">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="contact_no">Contact No</label>
+          </td>
+          <td>
+            <input type="text" name="contact_no" id="contact_no">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="email">Email</label>
+          </td>
+          <td>
+            <input type="text" name="email" id="email">
+          </td>
+        </tr>
+      </table>
+
       <br>
 
-      <input class="btn" type="submit" value="Add New Contact">
+      <div class="btn--wrapper">
+        <input class="btn" type="submit" value="Add New Contact">
+      </div>
+
     </form>
 
   </div>

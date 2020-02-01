@@ -77,7 +77,6 @@ td {
   color: 	#696969;
   font-weight: normal;
   border-radius: 5px;
-  /* width: 120px; */
 }
 
 /* background-color: #577284; */
@@ -91,7 +90,7 @@ th {
 
 th.main {
   background-color: #646C79;
-  height: 75px;
+  height: 60px;
 }
 
 .wrapper {
@@ -111,4 +110,8 @@ th.main {
   padding: 10px 10px 20px 10px;
   background-image: linear-gradient(to right, #f5f5ef, #ebebe0);
   border-radius: 5px;
+}
+
+select {
+  width:100%;
 }

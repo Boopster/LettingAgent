@@ -2,7 +2,7 @@ require_relative( '../db/sql_runner' )
 
 class Rental
 
-  attr_reader(:prop_id, :tenant_id,:id)
+  attr_reader(:prop_id, :tenant_id, :start_date, :id)
 
   def initialize( options )
     @id = options['id'].to_i() if options['id']
@@ -68,7 +68,7 @@ class Rental
     sql = "SELECT * FROM rentals WHERE id = $1"
     values = [id]
     rental = SqlRunner.run(sql,values)
-    return Rental.new(rental.first())
+    return rental.map() { |rental| Rental.new(rental) }
   end
 
   def self.delete(id)
@@ -80,7 +80,7 @@ class Rental
 
   def self.delete_all()
    sql = "DELETE FROM rentals"
-   SqlRunner.run( sql )
+   SqlRunner.run(sql)
  end
 
 end

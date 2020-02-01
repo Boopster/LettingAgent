@@ -1,28 +1,42 @@
-<div class="form-container"
-  <div class=form>
+<div class="form-container">
+  <div class="form">
 
     <table>
-    <tr>
-      <th colspan="2">Property Details</th>
-    </tr>
-    <tr>
-      <td><img class="listing" src="../images/awaiting_photos.jpg" alt="awaiting photos"></td>
-      <td>
-        <p><%=@property.prop_name%>, <%=@property.prop_no%> <%=@property.street_name%>,  <%=@property.town%>, <%=@property.postcode%></p>
-        <p>Property Type: <%= @property.prop_type %></p>
-        <p>Bedrooms: <%= @property.bedrooms %></p>
-        <p>Price(£pcm): <%= @property.price_pcm %></p>
-      </td>
-    </tr>
-    <table>  
+      <tr>
+        <th class="main">Property Details</th>
+      </tr>
+      <tr>
+        <td class="column">
+          <img class="listing" src="../images/awaiting_photos.jpg" alt="awaiting photos">
+        </td>
+      </tr>
+      <tr>
+        <td class="column">
+          <p><%=@property.prop_name%>, <%=@property.prop_no%> <%=@property.street_name%>,  <%=@property.town%>, <%=@property.postcode%></p>
+          <p>Property Type: <%= @property.prop_type %></p>
+          <p>Bedrooms: <%= @property.bedrooms %></p>
+          <p>Price(£pcm): <%= @property.price_pcm %></p>
+        </td>
+      </tr>
+    </table>
+
+    <br>
+
+  <div class="btn--double">
+
+    <div class="btn--wrapper">
+      <form method="post" action="/properties/<%= @property.id %>/delete">
+        <input class="btn" type="submit" value="Delete Listing">
+      </form>
+    </div>
+
+    <div class="btn--wrapper">
+      <form method="get" action="/properties/<%= @property.id %>/edit">
+        <input class="btn" type="submit" value="Edit Listing">
+      </form>
+    </div>
+
+  </div>
 
   </div>
 </div>
-
-<form method="post" action="/properties/<%= @property.id %>/delete">
-  <input class="btn" type="submit" value="Delete Listing"/>
-</form>
-
-<form method="get" action="/properties/<%= @property.id %>/edit">
-  <input class="btn type="submit" value="Edit Listing"/>
-</form>
