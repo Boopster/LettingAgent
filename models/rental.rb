@@ -15,7 +15,7 @@ class Rental
     sql = "INSERT INTO rentals
     (
       prop_id,
-      tenant_id
+      tenant_id,
       start_date
     )
     VALUES
@@ -68,7 +68,7 @@ class Rental
     sql = "SELECT * FROM rentals WHERE id = $1"
     values = [id]
     rental = SqlRunner.run(sql,values)
-    return rental.map() { |rental| Rental.new(rental) }
+    return Rental.new(rental.first())
   end
 
   def self.delete(id)
@@ -80,7 +80,7 @@ class Rental
 
   def self.delete_all()
    sql = "DELETE FROM rentals"
-   SqlRunner.run(sql)
+   SqlRunner.run( sql )
  end
 
 end
