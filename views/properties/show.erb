@@ -18,25 +18,26 @@
           <p>Price(£pcm): <%= @property.price_pcm %></p>
         </td>
       </tr>
-    </table>
 
-    <br>
+</table>
 
-  <div class="btn--double">
 
-    <div class="btn--wrapper">
+  <div class="btn-double">
+
+    <div class="btn-wrapper">
       <form method="post" action="/properties/<%= @property.id %>/delete">
         <input class="btn" type="submit" value="Delete Listing">
       </form>
     </div>
 
-    <div class="btn--wrapper">
+    <div class="btn-wrapper">
       <form method="get" action="/properties/<%= @property.id %>/edit">
         <input class="btn" type="submit" value="Edit Listing">
       </form>
     </div>
 
   </div>
+
 
   </div>
 </div>

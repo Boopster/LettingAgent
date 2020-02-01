@@ -10,7 +10,7 @@
           <th>Postcode</th>
           <th>Lease Start Date</th>
           <th>Tenant Count</th>
-          <th></th>
+          <th>Actions</th>
         </tr>
     <% @rentals.each() { |rental| if rental.property.prop_status == "leased"%>
       <tr>
@@ -27,7 +27,7 @@
     </table>
     <br>
 
-    <div class="btn--wrapper">
+    <div class="btn-wrapper">
       <a class="btn" href="/rentals/new">Create Lease</a>
     </div>
 </div>

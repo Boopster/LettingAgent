@@ -1,8 +1,6 @@
-<div class="form">
+<div class="form-container">
+  <div class="form">
   <form action="/tenants/<%= @tenant.id %>" method="post">
-
-    <label for="first_name">First Names(s)</label>
-    <input type="text" name="first_name" id="first_name" value="<%= @tenant.first_name %>">
 
       <table>
         <tr>
@@ -45,10 +43,11 @@
 
       <br>
 
-      <div class="btn--wrapper">
+      <div class="btn-wrapper">
         <input class="btn" type="submit" value="Update Contact">
       </div>
 
     </form>
 
   </div>
+</div>

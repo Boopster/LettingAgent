@@ -89,7 +89,7 @@ th {
 
 th.main {
   background-color: #577284;
-  height: 75px;
+  height: 60px;
 }
 
 .wrapper {
@@ -102,11 +102,12 @@ th.main {
 .form-container {
   display: flex;
   justify-content: center;
+
 }
 
 .form {
   margin: 0;
-  padding: 0;
+  padding: 30px;
   background-image: linear-gradient(to right, #f5f5ef, #ebebe0);
 }
 

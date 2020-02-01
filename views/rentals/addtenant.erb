@@ -1,7 +1,8 @@
-<form action="/rentals" method="post">
-
 <div class="form-container">
   <div class="form">
+    <form action="/rentals" method="post">
+
+
     <table>
       <tr>
         <th class="main">Property:</th>
@@ -12,9 +13,6 @@
           <input type="hidden" name="prop_id" id="prop_id" value="<%=@rental.property.id%>">
         </td>
       </tr>
-    </table>
-
-    <table>
       <tr>
         <th class="main">Select a tenant:</th>
       </tr>
@@ -27,8 +25,12 @@
         </select>
       </td>
       </tr>
+      <tr>
+        <td>
+          <input type='submit' value="Add Tenant">
+        </td>
+      <tr>
     </table>
+    </form>
   </div>
 </div>
-  <p><input type='submit' value="Add New Lease"></p>
-</form>

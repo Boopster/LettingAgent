@@ -8,8 +8,6 @@
   font-weight: bold;
   width: 150px;
   margin: 10px;
-  display: flex;
-  justify-content: center;
 }
 
 .btn:hover {
@@ -20,12 +18,12 @@
   font-weight: bold;
 }
 
-.btn--double {
+.btn-double {
   display: flex;
   justify-content: space-around;
 }
 
-.btn--wrapper {
+.btn-wrapper {
   display: flex;
   justify-content: center;
 }
