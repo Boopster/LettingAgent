@@ -1,7 +1,8 @@
-<div class="form-container">
-  <div class="form">
+<div class="form">
+  <form action="/tenants/<%= @tenant.id %>" method="post">
 
-    <form action="/tenants/<%= @tenant.id %>" method="post">
+    <label for="first_name">First Names(s)</label>
+    <input type="text" name="first_name" id="first_name" value="<%= @tenant.first_name %>">
 
       <table>
         <tr>
@@ -51,4 +52,3 @@
     </form>
 
   </div>
-</div>

@@ -24,8 +24,7 @@ get '/properties/:id/edit' do
 end
 
 post '/properties' do
-  property = Property.new(params)
-  property.save()
+  property = Property.new(params).save()
   redirect to("/properties")
 end
 
