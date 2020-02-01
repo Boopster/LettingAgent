@@ -1,6 +1,7 @@
 require( 'sinatra' )
 require( 'sinatra/contrib/all' )
 require( 'pry-byebug' )
+require( 'date' )
 require_relative( '../models/rental.rb' )
 require_relative( '../models/property.rb' )
 require_relative( '../models/tenant.rb' )
@@ -26,7 +27,8 @@ end
 post '/rentals' do
   rental = Rental.new(params)
   rental.save()
-  rental.property.update_status_leased()
+  rental.property.update_status_leased
+  rental.tenant.update_status_active()
   redirect to("/rentals")
 end
 

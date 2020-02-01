@@ -8,6 +8,7 @@ class Rental
     @id = options['id'].to_i() if options['id']
     @prop_id = options['prop_id'].to_i()
     @tenant_id = options['tenant_id'].to_i()
+    @start_date = options['start_date']
   end
 
   def save()
@@ -15,13 +16,14 @@ class Rental
     (
       prop_id,
       tenant_id
+      start_date
     )
     VALUES
     (
-      $1, $2
+      $1, $2, $3
     )
     RETURNING id"
-    values = [@prop_id,@tenant_id]
+    values = [@prop_id,@tenant_id,@start_date]
     results = SqlRunner.run(sql,values)
     @id = results.first()['id'].to_i()
   end
